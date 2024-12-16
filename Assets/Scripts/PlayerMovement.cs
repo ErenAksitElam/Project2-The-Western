@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float bulletLife = 3f;
 
     public float bulletSpeed = 10f;
+    public static float originalAmmo = 6f;
+    private float ammo = originalAmmo;
 
     private Rigidbody2D rb;
 
@@ -23,14 +25,12 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
+}
 
     // Update is called once per frame
     void Update()
     {
         movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
         GunShooting();
     }
 
@@ -41,35 +41,50 @@ public class PlayerMovement : MonoBehaviour
 
     private void GunShooting()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(ammo != 0)
         {
-            //spawn bullet
-            GameObject bulletInst = Instantiate(bullet, transform.position, Quaternion.identity);
-            Rigidbody2D bulletInstRB = bulletInst.GetComponent<Rigidbody2D>();
-
-            if(horizontal == 1)
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
+                GameObject bulletInst = Instantiate(bullet, transform.position, Quaternion.identity);
+                Rigidbody2D bulletInstRB = bulletInst.GetComponent<Rigidbody2D>();
                 bulletInstRB.AddForce(gameObject.transform.right * bulletSpeed);
+                ammo -= 1;
                 Destroy(bulletInst, bulletLife);
             }
-            if(horizontal == -1)
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                GameObject bulletInst = Instantiate(bullet, transform.position, Quaternion.identity);
+                Rigidbody2D bulletInstRB = bulletInst.GetComponent<Rigidbody2D>();
                 bulletInstRB.AddForce(-gameObject.transform.right * bulletSpeed);
+                ammo -= 1;
                 Destroy(bulletInst, bulletLife);
             }
-
-            if(vertical == 1)
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                GameObject bulletInst = Instantiate(bullet, transform.position, Quaternion.identity);
+                Rigidbody2D bulletInstRB = bulletInst.GetComponent<Rigidbody2D>();
                 bulletInstRB.AddForce(gameObject.transform.up * bulletSpeed);
+                ammo -= 1;
                 Destroy(bulletInst, bulletLife);
             }
-
-            if(vertical == -1)
+            if (Input.GetKeyDown(KeyCode.DownArrow))
             {
+                GameObject bulletInst = Instantiate(bullet, transform.position, Quaternion.identity);
+                Rigidbody2D bulletInstRB = bulletInst.GetComponent<Rigidbody2D>();
                 bulletInstRB.AddForce(-gameObject.transform.up * bulletSpeed);
+                ammo -= 1;
                 Destroy(bulletInst, bulletLife);
             }
-            
         }
+        else
+        {
+            StartCoroutine(ReloadWait());
+        }
+    }
+
+    IEnumerator ReloadWait()
+    {
+        yield return new WaitForSeconds(3.5f);
+        ammo = originalAmmo;
     }
 }
