@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float bulletSpeed = 10f;
     public static float originalAmmo = 6f;
     private float ammo = originalAmmo;
+    private bool isReloading = false;
 
     private Rigidbody2D rb;
 
@@ -19,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontal;
     private float vertical;
+
+    public TMP_Text ammoText;
 
 
     // Start is called before the first frame update
@@ -32,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         GunShooting();
+        ammoText.SetText(ammo.ToString());
     }
 
     private void FixedUpdate()
@@ -41,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GunShooting()
     {
-        if(ammo != 0)
+        if(ammo != 0 && !isReloading)
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
@@ -76,15 +82,19 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(bulletInst, bulletLife);
             }
         }
-        else
+        else if (ammo == 0 && !isReloading)
         {
+            isReloading = true;
             StartCoroutine(ReloadWait());
         }
     }
 
     IEnumerator ReloadWait()
     {
+        isReloading = true;
         yield return new WaitForSeconds(3.5f);
         ammo = originalAmmo;
+        yield return new WaitForSeconds(0.5f);
+        isReloading = false;
     }
 }
