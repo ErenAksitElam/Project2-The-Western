@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
 
     public TMP_Text ammoText;
+    public TMP_Text hpText;
+
+    public float HP = 3;
 
 
     // Start is called before the first frame update
@@ -38,6 +42,12 @@ public class PlayerMovement : MonoBehaviour
         movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         GunShooting();
         ammoText.SetText(ammo.ToString());
+        hpText.SetText(HP.ToString());
+
+        if (HP <= 0)
+        {
+            SceneManager.LoadScene("DeathScreen");
+        }
     }
 
     private void FixedUpdate()
@@ -96,5 +106,13 @@ public class PlayerMovement : MonoBehaviour
         ammo = originalAmmo;
         yield return new WaitForSeconds(0.5f);
         isReloading = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "EnemyBullet")
+        {
+            HP -= 1;
+        }
     }
 }
