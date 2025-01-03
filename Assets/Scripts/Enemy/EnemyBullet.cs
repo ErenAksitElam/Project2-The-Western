@@ -28,6 +28,14 @@ public class EnemyBullet : MonoBehaviour
         moveDirection = dir;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Environment")
+        {
+            Destroy();
+        }
+    }
+
     private void Destroy()
     {
        gameObject.SetActive(false); 

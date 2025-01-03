@@ -14,7 +14,7 @@ public class EnemyFireBullets : MonoBehaviour
 
     private float angle = 0f;
 
-    public float selectedPattern;
+    public int selectedPattern;
     private bool hasAttacked = false;
 
     private void Start()

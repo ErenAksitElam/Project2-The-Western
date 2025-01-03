@@ -196,6 +196,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 3
+--- !u!50 &76125554 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7823167302686235319, guid: 56afa798f4235f14ebc407534a3ab57a, type: 3}
+  m_PrefabInstance: {fileID: 2979348651374882642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &76125558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76125533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce82b360eef94b45bf5a0614724f0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 76125554}
+  strength: 16
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1264,7 @@ GameObject:
   - component: {fileID: 1565069806}
   m_Layer: 6
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1519,6 +1547,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6886132704210204646, guid: 56afa798f4235f14ebc407534a3ab57a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 76125552}
+    - targetCorrespondingSourceObject: {fileID: 6886132704210204646, guid: 56afa798f4235f14ebc407534a3ab57a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 76125558}
     - targetCorrespondingSourceObject: {fileID: 1683130678600154505, guid: 56afa798f4235f14ebc407534a3ab57a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1871093158}
