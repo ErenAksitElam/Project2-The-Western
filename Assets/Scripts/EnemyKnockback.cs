@@ -28,10 +28,8 @@ public class EnemyKnockback : MonoBehaviour
         if (collision.gameObject.tag == "PlayerBullet")
         {
             knockbackVelocity = collision.transform.position;
-            knockbackReverse = new Vector2(-1, -1);
-            knockbackForce = knockbackVelocity * knockbackReverse;
 
-            rb.AddForce(new Vector2(knockbackForce);
+            rb.AddForce(knockbackVelocity * 500);
         }
     }
 
