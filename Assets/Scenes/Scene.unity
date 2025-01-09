@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 3
---- !u!114 &76125558
+--- !u!114 &76125564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,9 +205,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 76125533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ce82b360eef94b45bf5a0614724f0fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 62a2809fb99299b408848bda838cbdf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackTime: 0.2
+  force: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +316,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 2.8322175
+  orthographic size: 4.023007
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1536,7 +1538,7 @@ PrefabInstance:
       addedObject: {fileID: 76125552}
     - targetCorrespondingSourceObject: {fileID: 6886132704210204646, guid: 56afa798f4235f14ebc407534a3ab57a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 76125558}
+      addedObject: {fileID: 76125564}
     - targetCorrespondingSourceObject: {fileID: 1683130678600154505, guid: 56afa798f4235f14ebc407534a3ab57a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1871093158}

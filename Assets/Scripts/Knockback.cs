@@ -1,61 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
+    private Vector2 bulletDir;
     public float knockbackTime = 0.2f;
-    public float hitDirectionForce = 10f;
-    public float constForce = 5f;
-    public float inputForce = 7.5f;
+    public float force = 10;
 
-    private Rigidbody2D rb;
-
-    public bool isBeingKnockedBack {  get; private set; }
-
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        rb = GetComponent<Rigidbody2D>();
+        bulletDir = collision.gameObject.transform.forward;
+        collision.attachedRigidbody.AddForce(bulletDir.normalized * force);
+        Debug.Log("Applied Knockback");
     }
 
-    public IEnumerator KnockbackAction(Vector2 hitDirection, Vector2 constantForceDirection, float inputDirection)
+    private void Update()
     {
-        isBeingKnockedBack = true;
-
-        Vector2 _hitForce;
-        Vector2 _constantForce;
-        Vector2 _knockbackForce;
-        Vector2 _combinedForce;
-
-        _hitForce = hitDirection * hitDirectionForce;
-        _constantForce = constantForceDirection * constForce;
-
-
-        float _elapsedTime = 0f;
-        while (_elapsedTime < knockbackTime)
-        {
-            //iterate the timer
-            _elapsedTime += Time.fixedDeltaTime;
-
-            //combine _hitForce and _constantForce
-            _knockbackForce = _hitForce + _constantForce;
-
-            //combine knockBackForce with Input Force
-            if (inputDirection != 0)
-            {
-                _combinedForce = _knockbackForce + new Vector2(inputDirection, 0f);
-            }
-            else
-            {
-                _combinedForce = _knockbackForce;
-            }
-
-            //apply knockback
-            rb.velocity = _combinedForce;
-
-            yield return new WaitForFixedUpdate();
-        }
-
-        isBeingKnockedBack = false;
+        Debug.Log(bulletDir);
     }
 }
