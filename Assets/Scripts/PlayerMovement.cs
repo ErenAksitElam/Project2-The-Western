@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] float bulletLife = 3f;
 
-    public float bulletSpeed = 10f;
+    public float bulletSpeed = 90f;
     public static float originalAmmo = 6f;
     private float ammo = originalAmmo;
     private bool isReloading = false;
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-}
+    }
 
     // Update is called once per frame
     void Update()

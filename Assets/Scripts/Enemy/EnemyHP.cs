@@ -12,8 +12,6 @@ public class EnemyHP : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        Debug.Log(enemyHP);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
