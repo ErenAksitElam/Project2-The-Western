@@ -17,7 +17,7 @@ public class EnemyKnockback : MonoBehaviour
     public Behaviour AIPath;
     public Behaviour AIDestinationSetter;
 
-    public float knockbackTime = 2f;
+    public float knockbackTime = 0f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,14 +34,12 @@ public class EnemyKnockback : MonoBehaviour
         */
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            if (!isKnockedBack == false)
-            {
-                isKnockedBack = true;
-                knockbackVelocity = collision.transform.position;
-
-                rb.AddForce(knockbackVelocity * 250);
-                StartCoroutine(ResetKnockback());
-            }
+            isKnockedBack = true;
+            knockbackVelocity = collision.attachedRigidbody.velocity;
+            
+            rb.AddForce(knockbackVelocity * 20);
+            StartCoroutine(ResetKnockback());
+            collision.gameObject.SetActive(false);
         }
 
         if (collision.gameObject.tag == "Environment")

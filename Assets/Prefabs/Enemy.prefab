@@ -336,4 +336,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7823167302686235319}
-  knockbackForce: 100
+  AIPath: {fileID: 3422995459677909665}
+  AIDestinationSetter: {fileID: 7233472694389617930}
+  knockbackTime: 3
