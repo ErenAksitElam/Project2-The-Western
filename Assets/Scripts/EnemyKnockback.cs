@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -11,6 +12,12 @@ public class EnemyKnockback : MonoBehaviour
     Vector2 knockbackForce;
     Vector2 knockbackVelocity;
     Vector2 knockbackReverse;
+
+    private bool isKnockedBack = false;
+    public Behaviour AIPath;
+    public Behaviour AIDestinationSetter;
+
+    public float knockbackTime = 2f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,15 +34,39 @@ public class EnemyKnockback : MonoBehaviour
         */
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            knockbackVelocity = collision.transform.position;
+            if (!isKnockedBack == false)
+            {
+                isKnockedBack = true;
+                knockbackVelocity = collision.transform.position;
 
-            rb.AddForce(knockbackVelocity * 500);
+                rb.AddForce(knockbackVelocity * 250);
+                StartCoroutine(ResetKnockback());
+            }
         }
+
+        if (collision.gameObject.tag == "Environment")
+        {
+            isKnockedBack = false;
+        }
+    }
+
+    private IEnumerator ResetKnockback()
+    {
+        yield return new WaitForSeconds(knockbackTime);
+        isKnockedBack = false;
     }
 
     private void Update()
     {
-        Debug.Log(knockbackVelocity);
-        Debug.Log(knockbackForce);
+        if (isKnockedBack == true)
+        {
+            AIPath.enabled = false;
+            AIDestinationSetter.enabled = false;
+        }
+        else
+        {
+            AIPath.enabled = true;
+            AIDestinationSetter.enabled = true;
+        }
     }
 }
