@@ -19,24 +19,26 @@ public class EnemyFireBullets : MonoBehaviour
 
     private void Start()
     {
-        selectedPattern = Random.Range(1, 2);
+        int selectedPattern = Random.Range(0, 3);
     }
 
     private void Update()
     {
+        int selectedPattern = Random.Range(0, 3);
+
         if (selectedPattern == 1 && hasAttacked == false)
         {
-            InvokeRepeating("FirePattern1", 0f, 2f);
-            StartCoroutine(ChangeWait());
+            FirePattern1();
         }
-        if (selectedPattern == 2 && hasAttacked == false)
+        else if (selectedPattern == 2 && hasAttacked == false)
         {
-            InvokeRepeating("FirePattern2", 0f, 0.1f);
-            StartCoroutine(ChangeWait());
+            FirePattern2();
         }
+
+        Debug.Log(selectedPattern);
     }
 
-    private void FirePattern1()
+    private void FirePattern1Core()
     {
         float angleStep = (endAngle - startAngle) / bulletsAmount;
         float angle = startAngle;
@@ -58,7 +60,13 @@ public class EnemyFireBullets : MonoBehaviour
             angle += angleStep;
         }
     }
-    private void FirePattern2()
+    private void FirePattern1()
+    {
+        InvokeRepeating("FirePattern1Core", 0f, 2f);
+        StartCoroutine(ChangeWait());
+    }
+
+    private void FirePattern2Core()
     {
         float bulDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
         float bulDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
@@ -74,11 +82,18 @@ public class EnemyFireBullets : MonoBehaviour
 
         angle += 10f;
     }
+    private void FirePattern2()
+    {
+        InvokeRepeating("FirePattern2Core", 0f, 0.1f);
+        StartCoroutine(ChangeWait());
+    }
 
     IEnumerator ChangeWait()
     {
         hasAttacked = true;
-        yield return new WaitForSeconds(3.5f);
-        selectedPattern = Random.Range(1, 2);
+        yield return new WaitForSeconds(10f);
+        //int selectedPattern = Random.Range(0, 3);
+        CancelInvoke();
+        hasAttacked = false;
     }
 }
