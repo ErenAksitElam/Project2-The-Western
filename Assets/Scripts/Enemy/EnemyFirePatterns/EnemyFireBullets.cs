@@ -19,12 +19,12 @@ public class EnemyFireBullets : MonoBehaviour
 
     private void Start()
     {
-        int selectedPattern = Random.Range(0, 3);
+        int selectedPattern = Random.Range(0, 4);
     }
 
     private void Update()
     {
-        int selectedPattern = Random.Range(0, 3);
+        int selectedPattern = Random.Range(0, 4);
 
         if (selectedPattern == 1 && hasAttacked == false)
         {
@@ -33,6 +33,10 @@ public class EnemyFireBullets : MonoBehaviour
         else if (selectedPattern == 2 && hasAttacked == false)
         {
             FirePattern2();
+        }
+        else if (selectedPattern == 3 && hasAttacked == false)
+        {
+            FirePattern3();
         }
 
         Debug.Log(selectedPattern);
@@ -88,10 +92,41 @@ public class EnemyFireBullets : MonoBehaviour
         StartCoroutine(ChangeWait());
     }
 
+    private void FirePattern3Core()
+    {
+        float bulDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
+        float bulDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
+
+        Vector3 bulMoveVector = new Vector3(bulDirX, bulDirY, 0f);
+        Vector2 bulDir = (bulMoveVector - transform.position).normalized;
+
+        GameObject bul = BulletPool.bulletPoolInstanse.GetBullet();
+        bul.transform.position = transform.position;
+        bul.transform.rotation = transform.rotation;
+        bul.SetActive(true);
+        bul.GetComponent<EnemyBullet>().SetMoveDirection(bulDir);
+
+        angle += 50f;
+    }
+    private void FirePattern3()
+    {
+        InvokeRepeating("FirePattern3Core", 0f, 0.1f);
+        StartCoroutine(ChangeWait());
+    }
+
+    private void FirePattern4Core()
+    {
+        for (int i= 0; i<= 1; i++)
+        {
+            float bulDirX = transform.position.x + Mathf.Sin(((angle + 180f * i) * Mathf.PI) / 180f);
+            float bulDirY = transform.position.y + Mathf.Cos(((angle + 180f * i) * Mathf.PI) / 180f);
+        }
+    }
+
     IEnumerator ChangeWait()
     {
         hasAttacked = true;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         //int selectedPattern = Random.Range(0, 3);
         CancelInvoke();
         hasAttacked = false;
