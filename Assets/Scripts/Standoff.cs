@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Standoff : MonoBehaviour
 {
-
     public GameObject DisplayBox;
     public GameObject PassBox;
     public int QTEGen;
@@ -120,7 +119,7 @@ public class Standoff : MonoBehaviour
 
     IEnumerator CountDown()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(10f);
         if (countingDown == 1)
         {
             QTEGen = 4;
