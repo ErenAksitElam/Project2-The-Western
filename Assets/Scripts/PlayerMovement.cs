@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     bool isDashing;
     bool canDash = true;
 
+    public Standoff2 Standoff2Script;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,24 +49,27 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDashing)
+        if (Standoff2Script.standoff)
         {
-            return;
-        }
+            if (isDashing)
+            {
+                return;
+            }
 
-        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        GunShooting();
-        ammoText.SetText(ammo.ToString());
-        hpText.SetText(HP.ToString());
+            movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            GunShooting();
+            ammoText.SetText(ammo.ToString());
+            hpText.SetText(HP.ToString());
 
-        if (HP <= 0)
-        {
-            SceneManager.LoadScene("DeathScreen");
-        }
+            if (HP <= 0)
+            {
+                SceneManager.LoadScene("DeathScreen");
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canDash)
-        {
-            StartCoroutine(Dash());
+            if (Input.GetKeyDown(KeyCode.Space) && canDash)
+            {
+                StartCoroutine(Dash());
+            }
         }
     }
 

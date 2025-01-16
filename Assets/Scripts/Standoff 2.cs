@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,91 +12,51 @@ public class Standoff2 : MonoBehaviour
     public GameObject[] Patterns;
     public GameObject BulletText;
     public GameObject HPText;
-    public GameObject Player;
-    public GameObject Enemy;
+    public PlayerMovement playerMovementScript;
+    public EnemyFireBullets enemyFireBulletsScript;
+    public AIPath aiPathScript;
+    public AIDestinationSetter aiDestinationSetterScript;
+
+    private List<KeyCode> buttonSequence1 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow };
+    private List<KeyCode> buttonSequence2 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow };
+    private int currentIndex = 0;
+
 
     public int gen;
-    public bool waitingForKey = true;
-
-    public bool button1;
-    public bool button2;
-    public bool button3;
-    public bool button4;
-    public bool button5;
-
-    public bool passed;
-    public bool failed;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(WaitAtStart());
+        gen = Random.Range(1, 3);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (standoff == true)
-        {
-            BulletText.SetActive(false);
-            HPText.SetActive(false);
-        }
-        if (standoff == false)
-        {
-            BulletText.SetActive(true);
-            HPText.SetActive(true);
 
-            Patterns[0].SetActive(false);
-            Patterns[1].SetActive(false);
-
-            Pass.SetActive(false);
-            Fail.SetActive(false);
+        if (!standoff)
+        {
+            ResetUI();
+            return;
         }
 
-        if(waitingForKey == false && standoff == true)
-        {
-            gen = Random.Range(1, 2);
-        }
+        BulletText.SetActive(false);
+        HPText.SetActive(false);
 
-        if(gen == 1)
+        if (gen == 1)
         {
-            Patterns[0].SetActive(true);
+            Patterns[0].SetActive(true); // Display pattern indicator.
+
+            // Check for player input only during the standoff.
             if (Input.anyKeyDown)
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
+                if (Input.GetKeyDown(buttonSequence1[currentIndex]))
                 {
-                    button1 = true;
-                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    currentIndex++;
+                    if (currentIndex >= buttonSequence1.Count)
                     {
-                        button2 = true;
-                        if (Input.GetKeyDown(KeyCode.UpArrow))
-                        {
-                            button3 = true;
-                            if (Input.GetKeyDown(KeyCode.DownArrow))
-                            {
-                                button4 = true;
-                                if (Input.GetKeyDown(KeyCode.UpArrow))
-                                {
-                                    button5 = true;
-                                }
-                                else
-                                {
-                                    StartCoroutine(Failed());
-                                }
-                            }
-                            else
-                            {
-                                StartCoroutine(Failed());
-                            }
-                        }
-                        else
-                        {
-                            StartCoroutine(Failed());
-                        }
-                    }
-                    else
-                    {
-                        StartCoroutine(Failed());
+                        StartCoroutine(Passed());
                     }
                 }
                 else
@@ -105,23 +65,53 @@ public class Standoff2 : MonoBehaviour
                 }
             }
         }
-        if(gen == 2)
+        else if (gen == 2)
         {
             Patterns[1].SetActive(true);
+
+            if (Input.anyKeyDown)
+            {
+                if (Input.GetKeyDown(buttonSequence2[currentIndex]))
+                {
+                    currentIndex++;
+                    if (currentIndex >= buttonSequence2.Count)
+                    {
+                        StartCoroutine(Passed());
+                    }
+                }
+                else
+                {
+                    StartCoroutine(Failed());
+                }
+            }
         }
 
-        if(button1 == true && button2 == true && button3 == true && button4 == true && button5 == true)
+    }
+
+    void ResetUI()
+    {
+        BulletText.SetActive(true);
+        HPText.SetActive(true);
+
+        foreach (var pattern in Patterns)
         {
-            Pass.SetActive(true);
-            StartCoroutine(Passed());
-
+            pattern.SetActive(false);
         }
+
+        Pass.SetActive(false);
+        Fail.SetActive(false);
+
+        playerMovementScript.gameObject.SetActive(true);
+        enemyFireBulletsScript.gameObject.SetActive(true);
+        aiPathScript.gameObject.SetActive(true);
+        aiDestinationSetterScript.gameObject.SetActive(true);
     }
 
     IEnumerator WaitAtStart()
     {
         yield return new WaitForSeconds(3f);
         standoff = true;
+        currentIndex = 0; // Reset sequence on new standoff.
     }
 
     IEnumerator Passed()
