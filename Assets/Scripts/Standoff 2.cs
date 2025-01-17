@@ -19,6 +19,8 @@ public class Standoff2 : MonoBehaviour
 
     public GameObject Enemy;
 
+    public GameObject[] Checks;
+
     private List<KeyCode> buttonSequence1 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow };
     private List<KeyCode> buttonSequence2 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow };
     private int currentIndex = 0;
@@ -65,10 +67,11 @@ public class Standoff2 : MonoBehaviour
             Patterns[0].SetActive(true); // Display pattern indicator.
 
             // Check for player input only during the standoff.
-            if (Input.anyKeyDown && !Passing)
+            if (Input.anyKeyDown)
             {
                 if (Input.GetKeyDown(buttonSequence1[currentIndex]))
                 {
+                    Checks[currentIndex].SetActive(true);
                     currentIndex++;
                     if (currentIndex >= buttonSequence1.Count)
                     {
@@ -85,10 +88,11 @@ public class Standoff2 : MonoBehaviour
         {
             Patterns[1].SetActive(true);
 
-            if (Input.anyKeyDown && !Passing)
+            if (Input.anyKeyDown)
             {
                 if (Input.GetKeyDown(buttonSequence2[currentIndex]))
                 {
+                    Checks[currentIndex].SetActive(true);
                     currentIndex++;
                     if (currentIndex >= buttonSequence2.Count)
                     {
@@ -121,6 +125,11 @@ public class Standoff2 : MonoBehaviour
         enemyFireBulletsScript.gameObject.SetActive(true);
         aiPathScript.gameObject.SetActive(true);
         aiDestinationSetterScript.gameObject.SetActive(true);
+
+        for (int i = 0; i < Checks.Length; i++)
+        {
+            Checks[i].SetActive(false);
+        }
     }
 
     IEnumerator WaitAtStart()
