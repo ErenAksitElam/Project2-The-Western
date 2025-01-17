@@ -17,18 +17,25 @@ public class Standoff2 : MonoBehaviour
     public AIPath aiPathScript;
     public AIDestinationSetter aiDestinationSetterScript;
 
+    public GameObject Enemy;
+
     private List<KeyCode> buttonSequence1 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow };
     private List<KeyCode> buttonSequence2 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow };
     private int currentIndex = 0;
 
+    public bool Passing;
+    public bool Failing;
 
     public int gen;
+    private Rigidbody2D EnemyRB;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(WaitAtStart());
+        standoff = true;
+        currentIndex = 0; // Reset sequence on new standoff.
         gen = Random.Range(1, 3);
+        EnemyRB = Enemy.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -38,7 +45,13 @@ public class Standoff2 : MonoBehaviour
         if (!standoff)
         {
             ResetUI();
+            EnemyRB.simulated = true;
             return;
+        }
+
+        if (standoff)
+        {
+            EnemyRB.simulated = false;
         }
 
         BulletText.SetActive(false);
@@ -49,7 +62,7 @@ public class Standoff2 : MonoBehaviour
             Patterns[0].SetActive(true); // Display pattern indicator.
 
             // Check for player input only during the standoff.
-            if (Input.anyKeyDown)
+            if (Input.anyKeyDown && !Passing)
             {
                 if (Input.GetKeyDown(buttonSequence1[currentIndex]))
                 {
@@ -69,7 +82,7 @@ public class Standoff2 : MonoBehaviour
         {
             Patterns[1].SetActive(true);
 
-            if (Input.anyKeyDown)
+            if (Input.anyKeyDown && !Passing)
             {
                 if (Input.GetKeyDown(buttonSequence2[currentIndex]))
                 {
@@ -109,22 +122,24 @@ public class Standoff2 : MonoBehaviour
 
     IEnumerator WaitAtStart()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.5f);
         standoff = true;
         currentIndex = 0; // Reset sequence on new standoff.
     }
 
     IEnumerator Passed()
     {
+        Passing = true;
         Pass.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1.5f);
         standoff = false;
     }
 
     IEnumerator Failed()
     {
+        Failing = true;
         Fail.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1.5f);
         standoff = false;
     }
 }

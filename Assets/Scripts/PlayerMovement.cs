@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Standoff2Script.standoff)
+        if (Standoff2Script.standoff == false)
         {
             if (isDashing)
             {
@@ -75,11 +75,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isDashing)
+        if (Standoff2Script.standoff == false)
         {
-            return;
+            if (isDashing)
+            {
+                return;
+            }
+            rb.velocity = movementDirection * movementSpeed;
         }
-        rb.velocity = movementDirection * movementSpeed;
     }
 
     private void GunShooting()

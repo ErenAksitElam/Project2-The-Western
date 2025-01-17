@@ -17,6 +17,8 @@ public class EnemyFireBullets : MonoBehaviour
     public int selectedPattern;
     private bool hasAttacked = false;
 
+    public Standoff2 Standoff2Script;
+
     private void Start()
     {
         int selectedPattern = Random.Range(0, 5);
@@ -24,26 +26,27 @@ public class EnemyFireBullets : MonoBehaviour
 
     private void Update()
     {
-        int selectedPattern = Random.Range(0, 5);
+        if (Standoff2Script.standoff == false)
+        {
+            int selectedPattern = Random.Range(0, 5);
 
-        if (selectedPattern == 1 && hasAttacked == false)
-        {
-            FirePattern1();
+            if (selectedPattern == 1 && hasAttacked == false)
+            {
+                FirePattern1();
+            }
+            else if (selectedPattern == 2 && hasAttacked == false)
+            {
+                FirePattern2();
+            }
+            else if (selectedPattern == 3 && hasAttacked == false)
+            {
+                FirePattern3();
+            }
+            else if (selectedPattern == 4 && hasAttacked == false)
+            {
+                FirePattern4();
+            }
         }
-        else if (selectedPattern == 2 && hasAttacked == false)
-        {
-            FirePattern2();
-        }
-        else if (selectedPattern == 3 && hasAttacked == false)
-        {
-            FirePattern3();
-        }
-        else if (selectedPattern == 4 && hasAttacked == false)
-        {
-            FirePattern4();
-        }
-
-        Debug.Log(selectedPattern);
     }
 
     private void FirePattern1Core()
