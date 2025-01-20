@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 7.5f;
+    public float movementSpeed = 7.5f;
     [SerializeField] private GameObject bullet;
     [SerializeField] float bulletLife = 3f;
 
@@ -29,9 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float HP = 3;
 
-    [SerializeField] float dashSpeed = 10f;
-    [SerializeField] float dashDuration = 1f;
-    [SerializeField] float dashCooldown = 1f;
+    public float dashSpeed = 10f;
+    public float dashDuration = 1f;
+    public float dashCooldown = 1f;
     bool isDashing;
     bool canDash = true;
 

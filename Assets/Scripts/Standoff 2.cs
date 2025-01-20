@@ -29,12 +29,15 @@ public class Standoff2 : MonoBehaviour
     public int gen;
     private Rigidbody2D EnemyRB;
 
+    public int buffSelect;
+
     // Start is called before the first frame update
     void Start()
     {
         standoff = true;
         currentIndex = 0; // Reset sequence on new standoff.
         gen = Random.Range(1, 3);
+        buffSelect = Random.Range(1, 3);
         EnemyRB = Enemy.GetComponent<Rigidbody2D>();
     }
 
@@ -126,11 +129,21 @@ public class Standoff2 : MonoBehaviour
         standoff = true;
         currentIndex = 0; // Reset sequence on new standoff.
     }
-
+               
     IEnumerator Passed()
     {
         Passing = true;
         Pass.SetActive(true);
+
+        if (buffSelect == 1)
+        {
+            Buff1();
+        }
+        else if (buffSelect == 2)
+        {
+
+        }
+
         yield return new WaitForSeconds(1.5f);
         standoff = false;
     }
@@ -142,4 +155,15 @@ public class Standoff2 : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         standoff = false;
     }
+
+    public void Buff1()
+    {
+        playerMovementScript.movementSpeed += 1f;
+        playerMovementScript.dashCooldown -= 0.2f;
+    }
+
+    public void Buff2()
+    {
+
+    } 
 }
