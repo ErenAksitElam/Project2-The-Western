@@ -5,10 +5,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Pathfinding.Util;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 7.5f;
+    public float movementSpeed = 7.5f;
     [SerializeField] private GameObject bullet;
     [SerializeField] float bulletLife = 3f;
 
@@ -27,16 +28,19 @@ public class PlayerMovement : MonoBehaviour
     public TMP_Text ammoText;
     public TMP_Text hpText;
 
-    public float HP = 3;
+    public float HP = 10;
 
-    [SerializeField] float dashSpeed = 10f;
-    [SerializeField] float dashDuration = 1f;
-    [SerializeField] float dashCooldown = 1f;
+    public float dashSpeed = 10f;
+    public float dashDuration = 1f;
+    public float dashCooldown = 1f;
     bool isDashing;
     bool canDash = true;
 
     public Standoff2 Standoff2Script;
 
+    public GameObject[] HealthBars;
+
+    private int currentIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -145,6 +149,10 @@ public class PlayerMovement : MonoBehaviour
             if (collision.gameObject.tag == "EnemyBullet")
             {
                 HP -= 1;
+                currentIndex += 1;
+
+                DisableHealthBars();
+                HealthBars[currentIndex].SetActive(true);
             }
         }
     }
@@ -159,5 +167,13 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    private void DisableHealthBars()
+    {
+        for (int i = 0; i < HealthBars.Length; i++)
+        {
+            HealthBars[i].SetActive(false);
+        }
     }
 }

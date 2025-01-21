@@ -10,7 +10,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("Destroy", 3f);
+        Invoke("DestroyBullet", 3f);
     }
     // Start is called before the first frame update
     void Start()
@@ -29,16 +29,19 @@ public class EnemyBullet : MonoBehaviour
     {
         moveDirection = dir;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Hits");
         if (collision.gameObject.tag == "Environment")
         {
-            Destroy();
+            Debug.Log("If statement");
+            DestroyBullet();
         }
     }
+    */
 
-    private void Destroy()
+    private void DestroyBullet()
     {
        gameObject.SetActive(false); 
     }
