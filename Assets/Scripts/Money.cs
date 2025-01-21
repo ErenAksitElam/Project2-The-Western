@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Money : MonoBehaviour
 {
-    static float money;
-    private int firstTime;
+    static float money = 1;
+    public float moneyPublic;
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +16,6 @@ public class Money : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (firstTime == 1)
-        {
-            money = 1;
-            firstTime += 1;
-        }
+        moneyPublic = money;
     }
 }

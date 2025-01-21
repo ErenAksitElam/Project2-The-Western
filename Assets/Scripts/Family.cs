@@ -6,8 +6,11 @@ using TMPro;
 public class Family : MonoBehaviour
 {
     public TMP_Text totalText;
-    public GameObject moneyScript;
+    public Money moneyScript;
     private GameObject familyMoney;
+
+    private bool FoodCheck;
+    private bool MedicineCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,18 @@ public class Family : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalText.SetText(.ToString());
+        totalText.SetText(moneyScript.moneyPublic.ToString() + "$");
+
+        Debug.Log("")
+    }
+
+    public void FoodChecked()
+    {
+        FoodCheck = true;
+    }
+
+    public void MedicineChecked()
+    {
+        MedicineCheck = true;
     }
 }
