@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
 
     public TMP_Text ammoText;
-    public TMP_Text hpText;
 
     public float HP = 10;
 
@@ -65,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
             movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             GunShooting();
             ammoText.SetText(ammo.ToString());
-            hpText.SetText(HP.ToString());
 
             if (HP <= 0)
             {
