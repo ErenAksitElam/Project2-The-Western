@@ -42,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
     private int currentIndex;
 
+    private bool iFrame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +75,11 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && canDash)
             {
                 StartCoroutine(Dash());
+            }
+
+            if (isDashing)
+            {
+                StartCoroutine(Invincibility());
             }
         }
     }
@@ -146,13 +153,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if(isDashing == false)
         {
-            if (collision.gameObject.tag == "EnemyBullet")
+            if (collision.gameObject.tag == "EnemyBullet" && !iFrame)
             {
                 HP -= 1;
                 currentIndex += 1;
 
                 DisableHealthBars();
                 HealthBars[currentIndex].SetActive(true);
+                StartCoroutine(Invincibility());
             }
         }
     }
@@ -175,5 +183,12 @@ public class PlayerMovement : MonoBehaviour
         {
             HealthBars[i].SetActive(false);
         }
+    }
+
+    private IEnumerator Invincibility()
+    {
+        iFrame = true;
+        yield return new WaitForSeconds(0.5f);
+        iFrame = false;
     }
 }

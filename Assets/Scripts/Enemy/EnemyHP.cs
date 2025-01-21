@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHP : MonoBehaviour
 {
-    public float enemyHP = 10;
+    public float enemyHP = 100;
+    public Image bossBar;
 
     private void Update()
     {
@@ -18,7 +20,8 @@ public class EnemyHP : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            enemyHP -= 1;
+            enemyHP -= 10;
+            bossBar.fillAmount = enemyHP / 100f;
         }
     }
 }
