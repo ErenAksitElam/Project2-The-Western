@@ -2,7 +2,6 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class Standoff2 : MonoBehaviour
 {
@@ -32,22 +31,12 @@ public class Standoff2 : MonoBehaviour
     public int gen;
     private Rigidbody2D EnemyRB;
 
-    public int buffSelect;
-
-    public GameObject BuffText1;
-    public GameObject BuffText2;
-    public TMP_Text BuffText1TMP;
-    public TMP_Text BuffText2TMP;
-
-    public GameObject HealthBar1;
-
     // Start is called before the first frame update
     void Start()
     {
         standoff = true;
         currentIndex = 0; // Reset sequence on new standoff.
         gen = Random.Range(1, 3);
-        buffSelect = Random.Range(1, 3);
         EnemyRB = Enemy.GetComponent<Rigidbody2D>();
     }
 
@@ -138,11 +127,6 @@ public class Standoff2 : MonoBehaviour
         {
             Checks[i].SetActive(false);
         }
-
-        BuffText1.SetActive(false);
-        BuffText2.SetActive(false);
-
-        HealthBar1.SetActive(true);
     }
 
     IEnumerator WaitAtStart()
@@ -156,16 +140,6 @@ public class Standoff2 : MonoBehaviour
     {
         Passing = true;
         Pass.SetActive(true);
-
-        if (buffSelect == 1)
-        {
-            Buff1();
-        }
-        else if (buffSelect == 2)
-        {
-            Buff2();
-        }
-
         yield return new WaitForSeconds(1.5f);
         standoff = false;
     }
@@ -174,66 +148,7 @@ public class Standoff2 : MonoBehaviour
     {
         Failing = true;
         Fail.SetActive(true);
-        if (buffSelect == 1)
-        {
-            Debuff1();
-        }
-        else if (buffSelect == 2)
-        {
-            Debuff2();
-        }
         yield return new WaitForSeconds(1.5f);
         standoff = false;
-    }
-
-    public void Buff1()
-    {
-        playerMovementScript.movementSpeed *= 1.2f;
-        playerMovementScript.dashCooldown *= 0.8f;
-
-        BuffText1.SetActive(true);
-        BuffText2.SetActive(true);
-
-        BuffText1TMP.SetText("+20% Movement Speed");
-        BuffText2TMP.SetText("-20% Dash Cooldown");
-        return;
-    }
-
-    public void Buff2()
-    {
-        playerMovementScript.bulletSpeed *= 1.1f;
-        playerMovementScript.dashSpeed *= 1.15f;
-
-        BuffText1.SetActive(true);
-        BuffText2.SetActive(true);
-
-        BuffText1TMP.SetText("+10% Movement Speed");
-        BuffText2TMP.SetText("+15% Dash Speed");
-        return;
-    }
-
-    public void Debuff1()
-    {
-        playerMovementScript.movementSpeed *= 0.8f;
-        playerMovementScript.dashCooldown *= 1.2f;
-
-        BuffText1.SetActive(true);
-        BuffText2.SetActive(true);
-
-        BuffText1TMP.SetText("-20% Movement Speed");
-        BuffText2TMP.SetText("+20% Dash Cooldown");
-        return;
-    }
-    public void Debuff2()
-    {
-        playerMovementScript.bulletSpeed *= 0.9f;
-        playerMovementScript.dashSpeed *= 0.8f;
-
-        BuffText1.SetActive(true);
-        BuffText2.SetActive(true);
-
-        BuffText1TMP.SetText("-10% Bullet Speed");
-        BuffText2TMP.SetText("-20% Dash Speed");
-        return;
     }
 }
