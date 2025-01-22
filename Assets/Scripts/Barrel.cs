@@ -10,5 +10,10 @@ public class Barrel : MonoBehaviour
         {
             other.gameObject.SetActive(false);
         }
+
+        if (other.gameObject.tag == "PlayerBullet")
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }

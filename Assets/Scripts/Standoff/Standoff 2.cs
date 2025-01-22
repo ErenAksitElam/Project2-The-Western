@@ -227,13 +227,13 @@ public class Standoff2 : MonoBehaviour
     public void Debuff2()
     {
         playerMovementScript.bulletSpeed *= 0.9f;
-        playerMovementScript.dashSpeed *= 0.8f;
+        playerMovementScript.dashSpeed *= 0.95f;
 
         BuffText1.SetActive(true);
         BuffText2.SetActive(true);
 
         BuffText1TMP.SetText("-10% Bullet Speed");
-        BuffText2TMP.SetText("-20% Dash Speed");
+        BuffText2TMP.SetText("-5% Dash Speed");
         return;
     }
 }
