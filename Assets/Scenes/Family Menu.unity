@@ -209,7 +209,7 @@ MonoBehaviour:
       - m_Target: {fileID: 908631453}
         m_TargetAssemblyTypeName: Family, Assembly-CSharp
         m_MethodName: FoodChecked
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -898,6 +898,7 @@ GameObject:
   - component: {fileID: 757747237}
   - component: {fileID: 757747236}
   - component: {fileID: 757747235}
+  - component: {fileID: 757747238}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -979,6 +980,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757747238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757747234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &763638461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -192, y: -573}
+  m_AnchoredPosition: {x: -192, y: -561}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890285881
@@ -1448,7 +1493,7 @@ MonoBehaviour:
       - m_Target: {fileID: 908631453}
         m_TargetAssemblyTypeName: Family, Assembly-CSharp
         m_MethodName: MedicineChecked
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2356,7 +2401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -493, y: -420}
+  m_AnchoredPosition: {x: -493, y: -408}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626680804
@@ -3090,18 +3135,12 @@ MonoBehaviour:
   selfOK: {fileID: 0}
   selfBAD: {fileID: 0}
   selfSICK: {fileID: 0}
-  WifeOK: {fileID: 0}
-  WifeBAD: {fileID: 0}
-  WifeSICK: {fileID: 0}
-  SonOK: {fileID: 0}
-  SonBAD: {fileID: 0}
-  SonSICK: {fileID: 0}
-  selfSickCounter: 0
-  wifeSickCounter: 0
-  sonSickCounter: 0
-  selfIsSick: 0
-  wifeIsSick: 0
-  sonIsSick: 0
+  wifeOK: {fileID: 0}
+  wifeBAD: {fileID: 0}
+  wifeSICK: {fileID: 0}
+  sonOK: {fileID: 0}
+  sonBAD: {fileID: 0}
+  sonSICK: {fileID: 0}
 --- !u!1001 &29884024042115998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3111,9 +3150,49 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: sonOK
+      value: 
+      objectReference: {fileID: 1489427680}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: selfOK
+      value: 
+      objectReference: {fileID: 1815011359}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: sonBAD
+      value: 
+      objectReference: {fileID: 1408343731}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: wifeOK
+      value: 
+      objectReference: {fileID: 633864544}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
       propertyPath: dayText
       value: 
       objectReference: {fileID: 1491076475}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: selfBAD
+      value: 
+      objectReference: {fileID: 830939512}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: sonSICK
+      value: 
+      objectReference: {fileID: 576528550}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: wifeBAD
+      value: 
+      objectReference: {fileID: 1699326491}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: foodText
+      value: 
+      objectReference: {fileID: 1626680804}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: selfSICK
+      value: 
+      objectReference: {fileID: 514472090}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: wifeSICK
+      value: 
+      objectReference: {fileID: 1382841732}
     - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
       propertyPath: totalText
       value: 
@@ -3123,13 +3202,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1023499851}
     - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: medicineText
+      value: 
+      objectReference: {fileID: 890285881}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
       propertyPath: remainingText
       value: 
       objectReference: {fileID: 501242239}
     - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: foodTextObject
+      value: 
+      objectReference: {fileID: 1626680802}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
       propertyPath: livingExpensesText
       value: 
       objectReference: {fileID: 1625594619}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: medicineTextObject
+      value: 
+      objectReference: {fileID: 890285879}
     - target: {fileID: 5671250171106822160, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1043.062

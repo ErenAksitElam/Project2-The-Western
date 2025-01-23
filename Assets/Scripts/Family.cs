@@ -5,6 +5,9 @@ using TMPro;
 
 public class Family : MonoBehaviour
 {
+    public static float money = 1;
+
+
     public TMP_Text totalText;
     public TMP_Text remainingText;
     public TMP_Text livingExpensesText;
@@ -21,8 +24,15 @@ public class Family : MonoBehaviour
     private bool foodCheck;
     private bool medicineCheck;
 
-    private float remainingMoney;
-    static float livingExpenses;
+    private float foodCost = 0;
+    private float medicineCost = 0;
+
+    private float foodCostCurrent = 0;
+    private float medicineCostCurrent = 0;
+
+    static float totalMoney = 0;
+    static float remainingMoney = 0;
+    static float livingExpenses = 0;
 
     static float selfHappiness = 100;
     static float wifeHappiness = 100;
@@ -35,52 +45,48 @@ public class Family : MonoBehaviour
     public GameObject selfOK;
     public GameObject selfBAD;
     public GameObject selfSICK;
-    public GameObject WifeOK;
-    public GameObject WifeBAD;
-    public GameObject WifeSICK;
-    public GameObject SonOK;
-    public GameObject SonBAD;
-    public GameObject SonSICK;
+    public GameObject wifeOK;
+    public GameObject wifeBAD;
+    public GameObject wifeSICK;
+    public GameObject sonOK;
+    public GameObject sonBAD;
+    public GameObject sonSICK;
 
-    static int day;
+    public static int day = 0;
 
-    public int selfSickCounter;
-    public int wifeSickCounter;
-    public int sonSickCounter;
+    static int selfSickCounter = 0;
+    static int wifeSickCounter = 0;
+    static int sonSickCounter = 0;
 
-    public bool selfIsSick;
-    public bool wifeIsSick;
-    public bool sonIsSick;
+    static bool selfIsSick = false;
+    static bool wifeIsSick = false;
+    static bool sonIsSick = false;
+
+    public float bountyReward;
 
     // Start is called before the first frame update
     void Start()
     {
         livingExpenses = 2f * day;
-        remainingMoney = moneyScript.moneyPublic - livingExpenses;
+        //remainingMoney = moneyScript.moneyPublic - livingExpenses;
         day += 1;
 
         selfSicknessRNG = Random.Range(1, 101);
         wifeSicknessRNG = Random.Range(1, 101);
         sonSicknessRNG = Random.Range(1, 101);
+
+        totalMoney = remainingMoney;
     }
 
     // Update is called once per frame+
     void Update()
     {
-        totalText.SetText(moneyScript.moneyPublic.ToString() + "$");
+        totalText.SetText(totalMoney.ToString() + "$");
         remainingText.SetText("Remaining:" + remainingMoney.ToString() + "$");
         livingExpensesText.SetText(livingExpenses.ToString() + "$");
         dayText.SetText("DAY: " + day.ToString());
 
-        if (foodCheck)
-        {
-            foodTextObject.SetActive(true);
-        }
-
-        if (medicineCheck)
-        {
-            medicineTextObject.SetActive(true);
-        }
+        remainingMoney = moneyScript.moneyPublic - livingExpenses - foodCostCurrent - medicineCostCurrent + bountyReward;
 
         if (selfHappiness >= 90)
         {
@@ -214,54 +220,161 @@ public class Family : MonoBehaviour
             }
             else
             {
-                selfOK.SetActive(false);
-                selfBAD.SetActive(true);
-                selfSICK.SetActive(false);
+                wifeOK.SetActive(false);
+                wifeBAD.SetActive(true);
+                wifeSICK.SetActive(false);
             }
         }
-        else if (selfHappiness >= 25)
+        else if (wifeHappiness >= 25)
         {
-            if (selfSicknessRNG <= 30)
+            if (wifeSicknessRNG <= 30)
             {
-                selfOK.SetActive(false);
-                selfBAD.SetActive(false);
-                selfSICK.SetActive(true);
+                wifeOK.SetActive(false);
+                wifeBAD.SetActive(false);
+                wifeSICK.SetActive(true);
 
-                selfSickCounter += 1;
+                wifeSickCounter += 1;
             }
             else
             {
-                selfOK.SetActive(false);
-                selfBAD.SetActive(true);
-                selfSICK.SetActive(false);
+                wifeOK.SetActive(false);
+                wifeBAD.SetActive(true);
+                wifeSICK.SetActive(false);
             }
         }
-        else if (selfHappiness <= 10)
+        else if (wifeHappiness <= 10)
         {
-            if (selfSicknessRNG <= 45)
+            if (wifeSicknessRNG <= 45)
             {
-                selfOK.SetActive(false);
-                selfBAD.SetActive(false);
-                selfSICK.SetActive(true);
+                wifeOK.SetActive(false);
+                wifeBAD.SetActive(false);
+                wifeSICK.SetActive(true);
 
-                selfSickCounter += 1;
+                wifeSickCounter += 1;
             }
             else
             {
-                selfOK.SetActive(false);
-                selfBAD.SetActive(false);
-                selfSICK.SetActive(true);
+                wifeOK.SetActive(false);
+                wifeBAD.SetActive(false);
+                wifeSICK.SetActive(true);
             }
+        }
+
+        if (sonHappiness >= 90)
+        {
+            if (sonSicknessRNG == 1)
+            {
+                sonOK.SetActive(false);
+                sonBAD.SetActive(false);
+                sonSICK.SetActive(true);
+
+                sonSickCounter += 1;
+            }
+            else
+            {
+                sonOK.SetActive(true);
+                sonBAD.SetActive(false);
+                sonSICK.SetActive(false);
+            }
+        }
+        else if (sonHappiness >= 75)
+        {
+            if (sonSicknessRNG <= 5)
+            {
+                sonOK.SetActive(false);
+                sonBAD.SetActive(false);
+                sonSICK.SetActive(true);
+
+                sonSickCounter += 1;
+            }
+            else
+            {
+                sonOK.SetActive(true);
+                sonBAD.SetActive(false);
+                sonSICK.SetActive(false);
+            }
+        }
+        else if (sonHappiness >= 50)
+        {
+            if (sonSicknessRNG <= 15)
+            {
+                sonOK.SetActive(false);
+                sonBAD.SetActive(false);
+                sonSICK.SetActive(true);
+
+                sonSickCounter += 1;
+            }
+            else
+            {
+                sonOK.SetActive(false);
+                sonBAD.SetActive(true);
+                sonSICK.SetActive(false);
+            }
+        }
+        else if (sonHappiness >= 25)
+        {
+            if (sonSicknessRNG <= 30)
+            {
+                sonOK.SetActive(false);
+                sonBAD.SetActive(false);
+                sonSICK.SetActive(true);
+
+                sonSickCounter += 1;
+            }
+            else
+            {
+                sonOK.SetActive(false);
+                sonBAD.SetActive(true);
+                sonSICK.SetActive(false);
+            }
+        }
+        else if (sonHappiness <= 10)
+        {
+            if (sonSicknessRNG <= 45)
+            {
+                sonOK.SetActive(false);
+                sonBAD.SetActive(false);
+                sonSICK.SetActive(true);
+
+                sonSickCounter += 1;
+            }
+            else
+            {
+                sonOK.SetActive(false);
+                sonBAD.SetActive(false);
+                sonSICK.SetActive(true);
+            }
+        }
+
+        medicineCostCurrent = medicineCost;
+        foodCostCurrent = foodCost;
+    }
+
+    public void FoodChecked(bool foodTickOn)
+    {
+        if (foodTickOn)
+        {
+            foodTextObject.SetActive(true);
+            foodCost += day;
+            foodText.SetText(foodCost.ToString() + "$");
+        }
+        else
+        {
+            foodTextObject.SetActive(false);
         }
     }
 
-    public void FoodChecked()
+    public void MedicineChecked(bool medicineTickOn)
     {
-        foodCheck = true;
-    }
-
-    public void MedicineChecked()
-    {
-        medicineCheck = true;
+        if (medicineTickOn)
+        {
+            medicineTextObject.SetActive(true);
+            medicineCost += day;
+            medicineText.SetText(medicineCost.ToString() + "$");
+        }
+        else
+        {
+            medicineTextObject.SetActive(false);
+        }
     }
 }
