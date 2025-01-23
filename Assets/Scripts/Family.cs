@@ -348,6 +348,8 @@ public class Family : MonoBehaviour
 
         medicineCostCurrent = medicineCost;
         foodCostCurrent = foodCost;
+
+
     }
 
     public void FoodChecked(bool foodTickOn)
@@ -356,11 +358,14 @@ public class Family : MonoBehaviour
         {
             foodTextObject.SetActive(true);
             foodCost += day;
-            foodText.SetText(foodCost.ToString() + "$");
+            foodText.SetText("-" + foodCost.ToString() + "$");
+            foodCheck = true;
         }
         else
         {
             foodTextObject.SetActive(false);
+            foodCost -= day;
+            foodCheck = false;
         }
     }
 
@@ -370,11 +375,19 @@ public class Family : MonoBehaviour
         {
             medicineTextObject.SetActive(true);
             medicineCost += day;
-            medicineText.SetText(medicineCost.ToString() + "$");
+            medicineText.SetText("-" + medicineCost.ToString() + "$");
+            medicineCheck = true;
         }
         else
         {
             medicineTextObject.SetActive(false);
+            medicineCost -= day;
+            medicineCheck = false;
         }
+    }
+
+    public void NextBounty()
+    {
+
     }
 }
