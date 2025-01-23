@@ -754,7 +754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &633864545
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1801,7 +1801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1489427681
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2825,7 +2825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1815011360
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3087,6 +3087,21 @@ MonoBehaviour:
   foodTextObject: {fileID: 0}
   medicineTextObject: {fileID: 0}
   moneyScript: {fileID: 0}
+  selfOK: {fileID: 0}
+  selfBAD: {fileID: 0}
+  selfSICK: {fileID: 0}
+  WifeOK: {fileID: 0}
+  WifeBAD: {fileID: 0}
+  WifeSICK: {fileID: 0}
+  SonOK: {fileID: 0}
+  SonBAD: {fileID: 0}
+  SonSICK: {fileID: 0}
+  selfSickCounter: 0
+  wifeSickCounter: 0
+  sonSickCounter: 0
+  selfIsSick: 0
+  wifeIsSick: 0
+  sonIsSick: 0
 --- !u!1001 &29884024042115998
 PrefabInstance:
   m_ObjectHideFlags: 0
