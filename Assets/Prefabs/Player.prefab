@@ -177,11 +177,23 @@ MonoBehaviour:
   bulletLife: 1.5
   bulletSpeed: 5400
   ammoText: {fileID: 0}
-  hpText: {fileID: 0}
-  HP: 10000
+  HP: 10
   dashSpeed: 25
   dashDuration: 0.25
   dashCooldown: 1
+  Standoff2Script: {fileID: 0}
+  HealthBars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &6383603933925335262
 GameObject:
   m_ObjectHideFlags: 0

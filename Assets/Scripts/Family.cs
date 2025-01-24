@@ -5,9 +5,6 @@ using TMPro;
 
 public class Family : MonoBehaviour
 {
-    public static float money = 1;
-
-
     public TMP_Text totalText;
     public TMP_Text remainingText;
     public TMP_Text livingExpensesText;
@@ -31,7 +28,7 @@ public class Family : MonoBehaviour
     private float medicineCostCurrent = 0;
 
     static float totalMoney = 0;
-    static float remainingMoney = 0;
+    static float remainingMoney = 5;
     static float livingExpenses = 0;
 
     static float selfHappiness = 100;
@@ -52,7 +49,7 @@ public class Family : MonoBehaviour
     public GameObject sonBAD;
     public GameObject sonSICK;
 
-    public static int day = 0;
+    public static int day = -1;
 
     static int selfSickCounter = 0;
     static int wifeSickCounter = 0;
@@ -86,7 +83,7 @@ public class Family : MonoBehaviour
         livingExpensesText.SetText(livingExpenses.ToString() + "$");
         dayText.SetText("DAY: " + day.ToString());
 
-        remainingMoney = moneyScript.moneyPublic - livingExpenses - foodCostCurrent - medicineCostCurrent + bountyReward;
+        remainingMoney = totalMoney - livingExpenses - foodCostCurrent - medicineCostCurrent + bountyReward;
 
         if (selfHappiness >= 90)
         {
@@ -348,8 +345,6 @@ public class Family : MonoBehaviour
 
         medicineCostCurrent = medicineCost;
         foodCostCurrent = foodCost;
-
-
     }
 
     public void FoodChecked(bool foodTickOn)

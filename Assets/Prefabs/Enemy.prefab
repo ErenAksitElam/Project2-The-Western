@@ -254,6 +254,7 @@ MonoBehaviour:
   startAngle: 0
   endAngle: 360
   selectedPattern: 0
+  Standoff2Script: {fileID: 0}
 --- !u!114 &3422995459677909665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,7 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332fce39b238e944688bf3a8126f0106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 10
+  enemyHP: 100
+  bossBar: {fileID: 0}
 --- !u!114 &905041301993390650
 MonoBehaviour:
   m_ObjectHideFlags: 0

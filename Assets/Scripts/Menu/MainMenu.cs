@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-
+        
     }
 
     public void Settings()
