@@ -12,7 +12,7 @@ public class Standoff2 : MonoBehaviour
     public GameObject Fail;
     public GameObject[] Patterns;
     public GameObject BulletText;
-    public GameObject HPText;
+    public GameObject EnemyHPBar;
     public PlayerMovement playerMovementScript;
     public EnemyFireBullets enemyFireBulletsScript;
     public AIPath aiPathScript;
@@ -68,7 +68,6 @@ public class Standoff2 : MonoBehaviour
         }
 
         BulletText.SetActive(false);
-        HPText.SetActive(false);
 
         if (gen == 1)
         {
@@ -119,7 +118,6 @@ public class Standoff2 : MonoBehaviour
     void ResetUI()
     {
         BulletText.SetActive(true);
-        HPText.SetActive(true);
 
         foreach (var pattern in Patterns)
         {
@@ -143,6 +141,7 @@ public class Standoff2 : MonoBehaviour
         BuffText2.SetActive(false);
 
         HealthBar1.SetActive(true);
+        EnemyHPBar.SetActive(true);
     }
 
     IEnumerator WaitAtStart()
