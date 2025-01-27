@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("EasyLevel1");
+        SceneManager.LoadScene("BountyCutscene");
     }
 
     public void Settings()

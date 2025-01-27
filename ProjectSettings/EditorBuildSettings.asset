@@ -6,12 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 8f540c44b32b1094f88d2277acf2c850
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: bb5b9e63f1dfde74ab1b5fbf6fb303d7
   - enabled: 1
-    path: Assets/Scenes/Levels/EasyLevel1.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Scenes/DeathScreen.unity
     guid: a4642e20bd3186342a055fb39183ac19
+  - enabled: 1
+    path: Assets/Scenes/Bounty Stuff/BountyCutscene.unity
+    guid: 9d4fe682b55ca724484053b55f69b0e2
+  - enabled: 1
+    path: Assets/Scenes/Bounty Stuff/BountyMenu.unity
+    guid: 3a0422c14124bc34197c202d98fa193f
+  - enabled: 1
+    path: Assets/Scenes/FamilyMenu.unity
+    guid: b1009fd606bb8e24db7f61332bac5029
+  - enabled: 1
+    path: Assets/Scenes/Levels/1_Very Easy/VeryEasyLevel1.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Levels/2_Easy/EasyLevel1.unity
+    guid: 67b24baf1fa4cfb40866c76f9ced1421
+  - enabled: 1
+    path: Assets/Scenes/Levels/3_Hard/HardLevel1.unity
+    guid: 3a754f0065fcd0b46862941f674f2d95
+  - enabled: 1
+    path: Assets/Scenes/Levels/4_Very Hard/VeryHardLevel1.unity
+    guid: df279cd0a0c0d7a4cb2ba4115c306087
   m_configObjects: {}

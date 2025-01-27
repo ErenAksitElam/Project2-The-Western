@@ -59,7 +59,7 @@ public class Family : MonoBehaviour
     static bool wifeIsSick = false;
     static bool sonIsSick = false;
 
-    public float bountyReward;
+    static float bountyReward;
 
     // Start is called before the first frame update
     void Start()

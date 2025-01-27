@@ -14,7 +14,7 @@ public class BountyMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        randomLevel = Random.Range(1, 3);
+        randomLevel = Random.Range(1, 2);
     }
 
     // Update is called once per frame
@@ -28,23 +28,28 @@ public class BountyMenu : MonoBehaviour
     {
         if (randomLevel == 1)
         {
-            SceneManager.LoadScene("EasyLevel1");
-        }
-        else if (randomLevel == 2)
-        {
-            SceneManager.LoadScene("EasyLevel2");
+            SceneManager.LoadScene("VeryEasyLevel1");
         }
     }
     public void Poster2()
     {
-
+        if (randomLevel == 1)
+        {
+            SceneManager.LoadScene("EasyLevel1");
+        }
     }
     public void Poster3()
     {
-
+        if (randomLevel == 1)
+        {
+            SceneManager.LoadScene("HardLevel1");
+        }
     }
     public void Poster4()
     {
-
+        if (randomLevel == 1)
+        {
+            SceneManager.LoadScene("VeryHardLevel1");
+        }
     }
 }

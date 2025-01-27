@@ -8,6 +8,8 @@ public class EnemyHP : MonoBehaviour
     public float enemyHP = 100;
     public Image bossBar;
 
+    public float maxHealth;
+
     private void Update()
     {
         if (enemyHP < 0)
@@ -21,7 +23,7 @@ public class EnemyHP : MonoBehaviour
         if (collision.gameObject.tag == "PlayerBullet")
         {
             enemyHP -= 10;
-            bossBar.fillAmount = enemyHP / 100f;
+            bossBar.fillAmount = enemyHP / maxHealth;
         }
     }
 }
