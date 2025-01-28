@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/4_Very Hard/VeryHardLevel1.unity
     guid: df279cd0a0c0d7a4cb2ba4115c306087
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: be3f3f0fff7ffd949822e7850f05dae1
   m_configObjects: {}

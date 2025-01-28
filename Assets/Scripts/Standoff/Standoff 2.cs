@@ -22,8 +22,8 @@ public class Standoff2 : MonoBehaviour
 
     public GameObject[] Checks;
 
-    private List<KeyCode> buttonSequence1 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow };
-    private List<KeyCode> buttonSequence2 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow };
+    private List<KeyCode> buttonSequence1;
+    private List<KeyCode> buttonSequence2;
     private int currentIndex = 0;
 
     public bool Passing;
@@ -49,6 +49,31 @@ public class Standoff2 : MonoBehaviour
         gen = Random.Range(1, 3);
         buffSelect = Random.Range(1, 3);
         EnemyRB = Enemy.GetComponent<Rigidbody2D>();
+        
+        if (Patterns[0].name == "Pattern 1 (Easy)")
+        {
+            buttonSequence1 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.UpArrow };
+        }
+        if (Patterns[1].name == "Pattern 2 (Easy)")
+        {
+            buttonSequence2 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow, KeyCode.E, KeyCode.UpArrow };
+        }
+        if (Patterns[0].name == "Pattern 1 (Medium)")
+        {
+            buttonSequence1 = new List<KeyCode> { KeyCode.E, KeyCode.W, KeyCode.D, KeyCode.L, KeyCode.L };
+        }
+        if (Patterns[1].name == "Pattern 2 (Medium)")
+        {
+            buttonSequence2 = new List<KeyCode> { KeyCode.C, KeyCode.V, KeyCode.K, KeyCode.L, KeyCode.O };
+        }
+        if (Patterns[0].name == "Pattern 1 (Hard)")
+        {
+            buttonSequence1 = new List<KeyCode> { KeyCode.Y, KeyCode.W, KeyCode.RightArrow, KeyCode.J, KeyCode.LeftArrow };
+        }
+        if (Patterns[1].name == "Pattern 2 (Hard)")
+        {
+            buttonSequence2 = new List<KeyCode> { KeyCode.UpArrow, KeyCode.W, KeyCode.P, KeyCode.Z, KeyCode.L };
+        }
     }
 
     // Update is called once per frame
