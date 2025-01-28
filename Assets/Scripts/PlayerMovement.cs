@@ -6,6 +6,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Pathfinding.Util;
+using UnityEditor.Experimental.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float bulletSpeed = 90f;
     public static float originalAmmo = 6f;
     private float ammo = originalAmmo;
-    private bool isReloading = false;
+    public bool isReloading = false;
 
     private Rigidbody2D rb;
 
