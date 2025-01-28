@@ -16,7 +16,6 @@ public class EnemyHP : MonoBehaviour
         if (enemyHP < 0)
         {
             SceneManager.LoadScene("BountyCompleted");
-            Destroy(gameObject);
         }
     }
 

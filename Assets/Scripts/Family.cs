@@ -50,7 +50,7 @@ public class Family : MonoBehaviour
     public GameObject sonBAD;
     public GameObject sonSICK;
 
-    public static int day = -1;
+    public static float day = 0;
 
     static int selfSickCounter = 0;
     static int wifeSickCounter = 0;
@@ -60,14 +60,14 @@ public class Family : MonoBehaviour
     static bool wifeIsSick = false;
     static bool sonIsSick = false;
 
-    static float bountyReward;
+    public static float bountyReward = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         livingExpenses = 2f * day;
         //remainingMoney = moneyScript.moneyPublic - livingExpenses;
-        day += 1;
+        day += 1f;
 
         selfSicknessRNG = Random.Range(1, 101);
         wifeSicknessRNG = Random.Range(1, 101);
@@ -385,5 +385,22 @@ public class Family : MonoBehaviour
     public void NextBounty()
     {
         SceneManager.LoadScene("BountyCutscene");
+    }
+
+    public void OneStarBounty()
+    {
+        bountyReward = 3;
+    }
+    public void TwoStarBounty()
+    {
+        bountyReward = 5;
+    }
+    public void ThreeStarBounty()
+    {
+        bountyReward = 7;
+    }
+    public void FourStarBounty()
+    {
+        bountyReward = 10;
     }
 }
