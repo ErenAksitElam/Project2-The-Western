@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Family : MonoBehaviour
 {
@@ -383,6 +384,6 @@ public class Family : MonoBehaviour
 
     public void NextBounty()
     {
-
+        SceneManager.LoadScene("BountyCutscene");
     }
 }

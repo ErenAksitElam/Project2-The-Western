@@ -295,7 +295,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 132887588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 434440143}
+        m_TargetAssemblyTypeName: BountyCompleted, Assembly-CSharp
+        m_MethodName: BountyCompletedContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &132887588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +357,7 @@ GameObject:
   - component: {fileID: 434440140}
   - component: {fileID: 434440142}
   - component: {fileID: 434440141}
+  - component: {fileID: 434440143}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -410,6 +423,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434440139}
   m_CullTransparentMesh: 1
+--- !u!114 &434440143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434440139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9110b89d03011c84e891d129634119c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1544178949
 GameObject:
   m_ObjectHideFlags: 0
