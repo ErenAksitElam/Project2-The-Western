@@ -3141,6 +3141,7 @@ MonoBehaviour:
   dayText: {fileID: 0}
   foodText: {fileID: 0}
   medicineText: {fileID: 0}
+  bountyRewardText: {fileID: 0}
   foodTextObject: {fileID: 0}
   medicineTextObject: {fileID: 0}
   moneyScript: {fileID: 0}
@@ -3206,6 +3207,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1382841732}
     - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
       propertyPath: totalText
       value: 
       objectReference: {fileID: 1181186981}
@@ -3218,6 +3223,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 890285881}
     - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: bountyRewards
+      value: 
+      objectReference: {fileID: 1676888553}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
       propertyPath: remainingText
       value: 
       objectReference: {fileID: 501242239}
@@ -3225,6 +3234,10 @@ PrefabInstance:
       propertyPath: foodTextObject
       value: 
       objectReference: {fileID: 1626680802}
+    - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
+      propertyPath: bountyRewardText
+      value: 
+      objectReference: {fileID: 1676888553}
     - target: {fileID: 5349741191380697630, guid: 8a9ec2d825858c943a8547b5f0a5e451, type: 3}
       propertyPath: livingExpensesText
       value: 

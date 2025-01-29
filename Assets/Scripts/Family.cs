@@ -12,6 +12,7 @@ public class Family : MonoBehaviour
     public TMP_Text dayText;
     public TMP_Text foodText;
     public TMP_Text medicineText;
+    public TMP_Text bountyRewardText;
 
     public GameObject foodTextObject;
     public GameObject medicineTextObject;
@@ -29,7 +30,7 @@ public class Family : MonoBehaviour
     private float medicineCostCurrent = 0;
 
     static float totalMoney = 0;
-    static float remainingMoney = 5;
+    static float remainingMoney = 0;
     static float livingExpenses = 0;
 
     static float selfHappiness = 100;
@@ -62,18 +63,26 @@ public class Family : MonoBehaviour
 
     public static float bountyReward = 0;
 
+    private int deathScreenRNG;
+
     // Start is called before the first frame update
     void Start()
     {
-        livingExpenses = 2f * day;
         //remainingMoney = moneyScript.moneyPublic - livingExpenses;
-        day += 1f;
-
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "FamilyMenu")
+        {
+            day += 0.5f;
+        }
+        livingExpenses = day;
         selfSicknessRNG = Random.Range(1, 101);
         wifeSicknessRNG = Random.Range(1, 101);
         sonSicknessRNG = Random.Range(1, 101);
 
-        totalMoney = remainingMoney;
+        deathScreenRNG = Random.Range(1, 7);
+
+        totalMoney = remainingMoney + bountyReward;
     }
 
     // Update is called once per frame+
@@ -83,8 +92,9 @@ public class Family : MonoBehaviour
         remainingText.SetText("Remaining:" + remainingMoney.ToString() + "$");
         livingExpensesText.SetText(livingExpenses.ToString() + "$");
         dayText.SetText("DAY: " + day.ToString());
+        bountyRewardText.SetText(bountyReward + "$");
 
-        remainingMoney = totalMoney - livingExpenses - foodCostCurrent - medicineCostCurrent + bountyReward;
+        remainingMoney = totalMoney - livingExpenses - foodCostCurrent - medicineCostCurrent;
 
         if (selfHappiness >= 90)
         {
@@ -95,6 +105,7 @@ public class Family : MonoBehaviour
                 selfSICK.SetActive(true);
 
                 selfSickCounter += 1;
+                selfIsSick = true;
             }
             else
             {
@@ -112,6 +123,7 @@ public class Family : MonoBehaviour
                 selfSICK.SetActive(true);
 
                 selfSickCounter += 1;
+                selfIsSick = true;
             }
             else
             {
@@ -129,6 +141,7 @@ public class Family : MonoBehaviour
                 selfSICK.SetActive(true);
 
                 selfSickCounter += 1;
+                selfIsSick = true;
             }
             else
             {
@@ -146,6 +159,7 @@ public class Family : MonoBehaviour
                 selfSICK.SetActive(true);
 
                 selfSickCounter += 1;
+                selfIsSick = true;
             }
             else
             {
@@ -163,6 +177,7 @@ public class Family : MonoBehaviour
                 selfSICK.SetActive(true);
 
                 selfSickCounter += 1;
+                selfIsSick = true;
             }
             else
             {
@@ -181,6 +196,7 @@ public class Family : MonoBehaviour
                 wifeSICK.SetActive(true);
 
                 wifeSickCounter += 1;
+                wifeIsSick = true;
             }
             else
             {
@@ -198,6 +214,7 @@ public class Family : MonoBehaviour
                 wifeSICK.SetActive(true);
 
                 wifeSickCounter += 1;
+                wifeIsSick = true;
             }
             else
             {
@@ -215,6 +232,7 @@ public class Family : MonoBehaviour
                 wifeSICK.SetActive(true);
 
                 wifeSickCounter += 1;
+                wifeIsSick = true;
             }
             else
             {
@@ -232,6 +250,7 @@ public class Family : MonoBehaviour
                 wifeSICK.SetActive(true);
 
                 wifeSickCounter += 1;
+                wifeIsSick = true;
             }
             else
             {
@@ -249,6 +268,7 @@ public class Family : MonoBehaviour
                 wifeSICK.SetActive(true);
 
                 wifeSickCounter += 1;
+                wifeIsSick = true;
             }
             else
             {
@@ -267,6 +287,7 @@ public class Family : MonoBehaviour
                 sonSICK.SetActive(true);
 
                 sonSickCounter += 1;
+                sonIsSick = true;
             }
             else
             {
@@ -284,6 +305,7 @@ public class Family : MonoBehaviour
                 sonSICK.SetActive(true);
 
                 sonSickCounter += 1;
+                sonIsSick = true;
             }
             else
             {
@@ -301,6 +323,7 @@ public class Family : MonoBehaviour
                 sonSICK.SetActive(true);
 
                 sonSickCounter += 1;
+                sonIsSick = true;
             }
             else
             {
@@ -318,6 +341,7 @@ public class Family : MonoBehaviour
                 sonSICK.SetActive(true);
 
                 sonSickCounter += 1;
+                sonIsSick = true;
             }
             else
             {
@@ -335,12 +359,15 @@ public class Family : MonoBehaviour
                 sonSICK.SetActive(true);
 
                 sonSickCounter += 1;
+                sonIsSick = true;
             }
             else
             {
                 sonOK.SetActive(false);
                 sonBAD.SetActive(false);
                 sonSICK.SetActive(true);
+
+                sonIsSick = true;
             }
         }
 
@@ -384,7 +411,119 @@ public class Family : MonoBehaviour
 
     public void NextBounty()
     {
-        SceneManager.LoadScene("BountyCutscene");
+        if (foodCheck)
+        {
+            selfHappiness += 10;
+            wifeHappiness += 10;
+            sonHappiness += 10;
+        }
+        else if (!foodCheck)
+        {
+            selfHappiness -= 10;
+            wifeHappiness -= 10;
+            sonHappiness -= 10;
+        }
+
+        if (selfIsSick && medicineCheck)
+        {
+            selfHappiness += 10;
+            selfIsSick = false;
+        }
+        else if (selfIsSick && !medicineCheck)
+        {
+            if (deathScreenRNG == 1)
+            {
+                SceneManager.LoadScene("YouDiedCholera");
+            }
+            else if (deathScreenRNG == 2)
+            {
+                SceneManager.LoadScene("YouDiedDysentery");
+            }
+            else if (deathScreenRNG == 3)
+            {
+                SceneManager.LoadScene("YouDiedMountainFever");
+            }
+            else if (deathScreenRNG == 4)
+            {
+                SceneManager.LoadScene("YouDiedScurvy");
+            }
+            else if (deathScreenRNG == 5)
+            {
+                SceneManager.LoadScene("YouDiedSmallpox");
+            }
+            else if (deathScreenRNG == 6)
+            {
+                SceneManager.LoadScene("YouDiedTuberculosis");
+            }
+        }
+        else if (wifeIsSick && medicineCheck)
+        {
+            wifeHappiness += 10;
+            wifeIsSick = false;
+        }
+        else if (wifeIsSick && !medicineCheck)
+        {
+            if (deathScreenRNG == 1)
+            {
+                SceneManager.LoadScene("WifeDiedCholera");
+            }
+            else if (deathScreenRNG == 2)
+            {
+                SceneManager.LoadScene("WifeDiedDysentery");
+            }
+            else if (deathScreenRNG == 3)
+            {
+                SceneManager.LoadScene("WifeDiedMountainFever");
+            }
+            else if (deathScreenRNG == 4)
+            {
+                SceneManager.LoadScene("WifeDiedScurvy");
+            }
+            else if (deathScreenRNG == 5)
+            {
+                SceneManager.LoadScene("WifeDiedSmallpox");
+            }
+            else if (deathScreenRNG == 6)
+            {
+                SceneManager.LoadScene("WifeDiedTuberculosis");
+            }
+        }
+        else if (sonIsSick && medicineCheck)
+        {
+            sonHappiness += 10;
+            sonIsSick = false;
+        }
+        else if (sonIsSick && !medicineCheck)
+        {
+            if (deathScreenRNG == 1)
+            {
+                SceneManager.LoadScene("SonDiedCholera");
+            }
+            else if (deathScreenRNG == 2)
+            {
+                SceneManager.LoadScene("SonDiedDysentery");
+            }
+            else if (deathScreenRNG == 3)
+            {
+                SceneManager.LoadScene("SonDiedMountainFever");
+            }
+            else if (deathScreenRNG == 4)
+            {
+                SceneManager.LoadScene("SonDiedScurvy");
+            }
+            else if (deathScreenRNG == 5)
+            {
+                SceneManager.LoadScene("SonDiedSmallpox");
+            }
+            else if (deathScreenRNG == 6)
+            {
+                SceneManager.LoadScene("SonDiedTuberculosis");
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene("BountyCutscene");
+        }
     }
 
     public void OneStarBounty()

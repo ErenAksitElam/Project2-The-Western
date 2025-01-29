@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: bb5b9e63f1dfde74ab1b5fbf6fb303d7
   - enabled: 1
-    path: Assets/Scenes/DeathScreen.unity
+    path: Assets/Scenes/Death Scenes/DeathScreen.unity
     guid: a4642e20bd3186342a055fb39183ac19
   - enabled: 1
     path: Assets/Scenes/Bounty Stuff/BountyCutscene.unity
@@ -41,4 +41,58 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bounty Stuff/BountyCompleted.unity
     guid: cc7e974aee6d89d4099744aa84440a48
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Self/YouDiedCholera.unity
+    guid: aa844021b0a75f64ba2f93cb9e4bc6d2
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Self/YouDiedDysentery.unity
+    guid: 2deaaa816647bdf469dc61c199c529b0
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Self/YouDiedMountainFever.unity
+    guid: 398201f3f887d3443a0c05875a5d1864
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Self/YouDiedScurvy.unity
+    guid: 741d3fab79a53164ba62a50b1a8b8599
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Self/YouDiedSmallpox.unity
+    guid: c641975e4a35ca74ba5ae24913eb3210
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Self/YouDiedTuberculosis.unity
+    guid: c714bf65686b73b43bab853097f00cdf
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Son/SonDiedCholera.unity
+    guid: bee1f81ef84896a42bf1b1166dab6941
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Son/SonDiedDysentery.unity
+    guid: 93cdecbd945112c4fae6507bfac81f14
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Son/SonDiedMountainFever.unity
+    guid: 7133cfdce52bb9f4f812b64b254e6a96
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Son/SonDiedScurvy.unity
+    guid: de89baef12f1a7b4190c352c74f3b33f
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Son/SonDiedSmallpox.unity
+    guid: a9588d5334f0d864f8048eaab2c7faca
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Son/SonDiedTuberculosis.unity
+    guid: ca3efcdaf1065cc42a16df316494aaa3
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Wife/WifeDiedCholera.unity
+    guid: f903f4c7a9378504489cd67389c86cb9
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Wife/WifeDiedDysentery.unity
+    guid: 42306638c6301fb4696da019e3467cde
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Wife/WifeDiedMountainFever.unity
+    guid: c0887821c1d500d48bd381583d23289c
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Wife/WifeDiedScurvy.unity
+    guid: 40c3d54272d07254c843e2b8ac712f74
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Wife/WifeDiedSmallpox.unity
+    guid: 559333fdfea37494186c14a8ed1855a4
+  - enabled: 1
+    path: Assets/Scenes/Death Scenes/Family Death Screens/Wife/WifeDiedTuberculosis.unity
+    guid: 2a418f6bf3f97f647a7d4c0aa9441255
   m_configObjects: {}
