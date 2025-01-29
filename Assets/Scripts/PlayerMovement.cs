@@ -26,8 +26,6 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     private float vertical;
 
-    public TMP_Text ammoText;
-
     public float HP = 10;
 
     public float dashSpeed = 10f;
@@ -64,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
 
             movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             GunShooting();
-            ammoText.SetText(ammo.ToString());
 
             if (HP <= 0)
             {

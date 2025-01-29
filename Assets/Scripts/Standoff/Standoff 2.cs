@@ -11,7 +11,6 @@ public class Standoff2 : MonoBehaviour
     public GameObject Pass;
     public GameObject Fail;
     public GameObject[] Patterns;
-    public GameObject BulletText;
     public GameObject EnemyHPBar;
     public PlayerMovement playerMovementScript;
     public EnemyFireBullets enemyFireBulletsScript;
@@ -92,8 +91,6 @@ public class Standoff2 : MonoBehaviour
             EnemyRB.simulated = false;
         }
 
-        BulletText.SetActive(false);
-
         if (gen == 1)
         {
             Patterns[0].SetActive(true); // Display pattern indicator.
@@ -142,8 +139,6 @@ public class Standoff2 : MonoBehaviour
 
     void ResetUI()
     {
-        BulletText.SetActive(true);
-
         foreach (var pattern in Patterns)
         {
             pattern.SetActive(false);

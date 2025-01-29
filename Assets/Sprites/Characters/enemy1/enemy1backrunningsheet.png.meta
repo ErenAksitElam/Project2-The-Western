@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef4ae5ba8c68bc342a742f1fe48ad6db
+guid: 4a396b3f6a38861439f545ef79c9ca82
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy1runninleftsheet_0
+      name: enemy1backrunningsheet_0
       rect:
         serializedVersion: 2
-        x: 78
-        y: 64
-        width: 80
-        height: 114
+        x: 85
+        y: 33
+        width: 76
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ae3946b4ba5d6c48b5b6ccb08d0773c
-      internalID: -291700702
+      spriteID: 15700c6f02990e3429c0ed3620c1e598
+      internalID: -1512365683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1runninleftsheet_1
+      name: enemy1backrunningsheet_1
       rect:
         serializedVersion: 2
-        x: 334
-        y: 64
-        width: 84
-        height: 114
+        x: 341
+        y: 38
+        width: 76
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3830561da7b4e4144ba31f6613e2d47e
-      internalID: -1810631784
+      spriteID: dc6eccb2f6486d5408f0b5ab6cc56579
+      internalID: -1401778896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1runninleftsheet_2
+      name: enemy1backrunningsheet_2
       rect:
         serializedVersion: 2
-        x: 590
-        y: 64
-        width: 73
-        height: 114
+        x: 597
+        y: 36
+        width: 76
+        height: 137
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c46c262951573b43bd97028ff9b9902
-      internalID: 1775130753
+      spriteID: e8a1458ef3d2e4f48b2dd462bd366c8e
+      internalID: -836057422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1runninleftsheet_3
+      name: enemy1backrunningsheet_3
       rect:
         serializedVersion: 2
-        x: 846
-        y: 64
-        width: 72
-        height: 114
+        x: 853
+        y: 36
+        width: 76
+        height: 137
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ba1d5bd91e445e4880d1c11766ba5fc
-      internalID: -1210599110
+      spriteID: 19630b73f81c5d24582ca4e08dc16f9c
+      internalID: -419576901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1runninleftsheet_4
+      name: enemy1backrunningsheet_4
       rect:
         serializedVersion: 2
-        x: 1102
-        y: 64
-        width: 72
-        height: 114
+        x: 1109
+        y: 30
+        width: 76
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14410adec9c59c24cad02ba1982767a1
-      internalID: -1301547660
+      spriteID: b50db96cce0869c4aaa18ae25a44cb1f
+      internalID: -1470008196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1runninleftsheet_5
+      name: enemy1backrunningsheet_5
       rect:
         serializedVersion: 2
-        x: 1358
-        y: 64
-        width: 75
-        height: 114
+        x: 1365
+        y: 32
+        width: 76
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 189b1fabff153ba48a7aaa4177f55e0c
-      internalID: 420130061
+      spriteID: 97f8fc7b35f82dd4bb6981b38db16d9e
+      internalID: 1048573529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1runninleftsheet_6
+      name: enemy1backrunningsheet_6
       rect:
         serializedVersion: 2
-        x: 1614
-        y: 64
-        width: 72
-        height: 114
+        x: 1621
+        y: 32
+        width: 76
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,8 +289,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb2d4a377bd89ab4fb32af80949e8a64
-      internalID: -78449594
+      spriteID: ea1ccaa02d2fe7b4db8ea3053d8c1c5c
+      internalID: 580307622
       vertices: []
       indices: 
       edges: []
@@ -306,13 +306,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      enemy1runninleftsheet_0: -291700702
-      enemy1runninleftsheet_1: -1810631784
-      enemy1runninleftsheet_2: 1775130753
-      enemy1runninleftsheet_3: -1210599110
-      enemy1runninleftsheet_4: -1301547660
-      enemy1runninleftsheet_5: 420130061
-      enemy1runninleftsheet_6: -78449594
+      enemy1backrunningsheet_0: -1512365683
+      enemy1backrunningsheet_1: -1401778896
+      enemy1backrunningsheet_2: -836057422
+      enemy1backrunningsheet_3: -419576901
+      enemy1backrunningsheet_4: -1470008196
+      enemy1backrunningsheet_5: 1048573529
+      enemy1backrunningsheet_6: 580307622
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

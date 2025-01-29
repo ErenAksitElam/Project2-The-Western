@@ -428,6 +428,10 @@ public class Family : MonoBehaviour
         {
             selfHappiness += 10;
             selfIsSick = false;
+            selfOK.SetActive(true);
+            selfBAD.SetActive(false);
+            selfSICK.SetActive(false);
+            SceneManager.LoadScene("BountyCutscene");
         }
         else if (selfIsSick && !medicineCheck)
         {
@@ -460,6 +464,10 @@ public class Family : MonoBehaviour
         {
             wifeHappiness += 10;
             wifeIsSick = false;
+            wifeOK.SetActive(true);
+            wifeBAD.SetActive(false);
+            wifeSICK.SetActive(false);
+            SceneManager.LoadScene("BountyCutscene");
         }
         else if (wifeIsSick && !medicineCheck)
         {
@@ -492,6 +500,10 @@ public class Family : MonoBehaviour
         {
             sonHappiness += 10;
             sonIsSick = false;
+            sonOK.SetActive(true);
+            sonBAD.SetActive(false);
+            sonSICK.SetActive(false);
+            SceneManager.LoadScene("BountyCutscene");
         }
         else if (sonIsSick && !medicineCheck)
         {
@@ -520,10 +532,8 @@ public class Family : MonoBehaviour
                 SceneManager.LoadScene("SonDiedTuberculosis");
             }
         }
-        else
-        {
-            SceneManager.LoadScene("BountyCutscene");
-        }
+
+        SceneManager.LoadScene("BountyCutscene");
     }
 
     public void OneStarBounty()

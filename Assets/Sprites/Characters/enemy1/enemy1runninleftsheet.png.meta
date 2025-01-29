@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba8e495ccffd2b6458c17e4f9beaa882
+guid: ef4ae5ba8c68bc342a742f1fe48ad6db
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy1shootin_0
+      name: enemy1runninleftsheet_0
       rect:
         serializedVersion: 2
-        x: 80
-        y: 82
-        width: 82
-        height: 122
+        x: 73
+        y: 64
+        width: 85
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cafb339ed42007d47a128f2a986e40c4
-      internalID: 2126117851
+      spriteID: 6f47ff50da46b8745a5d3b7efb5e2899
+      internalID: 1180466901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1shootin_1
+      name: enemy1runninleftsheet_1
       rect:
         serializedVersion: 2
-        x: 336
-        y: 82
-        width: 82
-        height: 122
+        x: 334
+        y: 64
+        width: 84
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +184,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f88787f14937883428759d12c40449b1
-      internalID: 848300441
+      spriteID: be85ff1c3cde27c44b2dfbc1fc8ceb4b
+      internalID: 1698307495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1runninleftsheet_2
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 64
+        width: 82
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afec18fa3d3c5c4f82ce6c082e1684a
+      internalID: 1811382507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1runninleftsheet_3
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 64
+        width: 72
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cfafd8fd0538ea4d942a992598ac186
+      internalID: -1164107802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1runninleftsheet_4
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 64
+        width: 78
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6810c78430183429a6bbb7470a5f11
+      internalID: -1891836391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1runninleftsheet_5
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 64
+        width: 75
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8bcf861cd0c254ab4c3887cbc491db
+      internalID: 742674414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1runninleftsheet_6
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 64
+        width: 82
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479dd0af901ede84089a9b235d30731f
+      internalID: -282704608
       vertices: []
       indices: 
       edges: []
@@ -201,8 +306,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      enemy1shootin_0: 2126117851
-      enemy1shootin_1: 848300441
+      enemy1runninleftsheet_0: 1180466901
+      enemy1runninleftsheet_1: 1698307495
+      enemy1runninleftsheet_2: 1811382507
+      enemy1runninleftsheet_3: -1164107802
+      enemy1runninleftsheet_4: -1891836391
+      enemy1runninleftsheet_5: 742674414
+      enemy1runninleftsheet_6: -282704608
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
