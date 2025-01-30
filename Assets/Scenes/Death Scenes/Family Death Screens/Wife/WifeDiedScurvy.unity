@@ -461,6 +461,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529399655}
   m_CullTransparentMesh: 1
+--- !u!1 &554795025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554795027}
+  - component: {fileID: 554795026}
+  m_Layer: 0
+  m_Name: Family Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &554795026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554795025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d907a35cd9a923f45820438b510a9838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalText: {fileID: 0}
+  remainingText: {fileID: 0}
+  livingExpensesText: {fileID: 0}
+  dayText: {fileID: 0}
+  foodText: {fileID: 0}
+  medicineText: {fileID: 0}
+  bountyRewardText: {fileID: 0}
+  foodTextObject: {fileID: 0}
+  medicineTextObject: {fileID: 0}
+  moneyScript: {fileID: 0}
+  selfOK: {fileID: 0}
+  selfBAD: {fileID: 0}
+  selfSICK: {fileID: 0}
+  wifeOK: {fileID: 0}
+  wifeBAD: {fileID: 0}
+  wifeSICK: {fileID: 0}
+  sonOK: {fileID: 0}
+  sonBAD: {fileID: 0}
+  sonSICK: {fileID: 0}
+--- !u!4 &554795027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554795025}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1042.2059, y: 546.5871, z: -6.4500294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &743613182
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae41756259d50a4b8c339099f27eb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FamilyScript: {fileID: 554795026}
 --- !u!1 &1775921371
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,3 +1018,4 @@ SceneRoots:
   - {fileID: 1775921374}
   - {fileID: 1759767004}
   - {fileID: 1007949293}
+  - {fileID: 554795027}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Runtime.ExceptionServices;
 
 public class Family : MonoBehaviour
 {
@@ -29,8 +30,8 @@ public class Family : MonoBehaviour
     private float foodCostCurrent = 0;
     private float medicineCostCurrent = 0;
 
-    static float totalMoney = 0;
-    static float remainingMoney = 0;
+    public static float totalMoney = 0;
+    public static float remainingMoney = 0;
     static float livingExpenses = 0;
 
     static float selfHappiness = 100;
@@ -551,5 +552,13 @@ public class Family : MonoBehaviour
     public void FourStarBounty()
     {
         bountyReward = 10;
+    }
+
+
+    public void Clear()
+    {
+        day = 0;
+        totalMoney = 0;
+        remainingMoney = 0;
     }
 }

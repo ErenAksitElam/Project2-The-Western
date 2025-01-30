@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class DeathScreen : MonoBehaviour
 {
+    public Family FamilyScript;
+
     public void NewRun()
     {
+        FamilyScript.Clear();
         SceneManager.LoadScene("BountyCutscene");
     }
 
