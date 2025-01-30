@@ -17,13 +17,6 @@ public class BountyMenu : MonoBehaviour
         randomLevel = Random.Range(1, 2);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     public void Poster1()
     {
         if (randomLevel == 1)
