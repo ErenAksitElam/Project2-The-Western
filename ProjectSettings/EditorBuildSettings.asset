@@ -95,4 +95,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Death Scenes/Family Death Screens/Wife/WifeDiedTuberculosis.unity
     guid: 2a418f6bf3f97f647a7d4c0aa9441255
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/TutorialEasy1.unity
+    guid: 30974896b6a65f84794c9942e710d3e6
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/TutorialHard1.unity
+    guid: c36ad2db5b1f3f749b177864e4a619b7
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/TutorialVeryEasy1.unity
+    guid: ac4bea50681a2ac459d1ae2471737186
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/TutorialVeryHard1.unity
+    guid: 6d8379c09228a3f4a9e000d326aa79be
   m_configObjects: {}

@@ -28,28 +28,28 @@ public class BountyMenu : MonoBehaviour
     {
         if (randomLevel == 1)
         {
-            SceneManager.LoadScene("VeryEasyLevel1");
+            SceneManager.LoadScene("TutorialVeryEasy1");
         }
     }
     public void Poster2()
     {
         if (randomLevel == 1)
         {
-            SceneManager.LoadScene("EasyLevel1");
+            SceneManager.LoadScene("TutorialEasy1");
         }
     }
     public void Poster3()
     {
         if (randomLevel == 1)
         {
-            SceneManager.LoadScene("HardLevel1");
+            SceneManager.LoadScene("TutorialHard1");
         }
     }
     public void Poster4()
     {
         if (randomLevel == 1)
         {
-            SceneManager.LoadScene("VeryHardLevel1");
+            SceneManager.LoadScene("TutorialVeryHard1");
         }
     }
 }

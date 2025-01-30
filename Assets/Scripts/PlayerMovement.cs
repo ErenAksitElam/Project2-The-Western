@@ -42,6 +42,12 @@ public class PlayerMovement : MonoBehaviour
 
     private bool iFrame;
 
+    public AudioSource gunShotSFX;
+    public AudioClip gunShotSFXClip;
+
+    public AudioSource reloadSFX;
+    public AudioClip reloadSFXClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
+                gunShotSFX.PlayOneShot(gunShotSFXClip);
                 GameObject bulletInst = Instantiate(bullet, transform.position, Quaternion.identity);
                 Rigidbody2D bulletInstRB = bulletInst.GetComponent<Rigidbody2D>();
                 bulletInstRB.AddForce(gameObject.transform.right * bulletSpeed);
@@ -106,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                gunShotSFX.PlayOneShot(gunShotSFXClip);
                 GameObject bulletInst = Instantiate(bullet, transform.position, Quaternion.identity);
                 Rigidbody2D bulletInstRB = bulletInst.GetComponent<Rigidbody2D>();
                 bulletInstRB.AddForce(-gameObject.transform.right * bulletSpeed);
@@ -114,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                gunShotSFX.PlayOneShot(gunShotSFXClip);
                 GameObject bulletInst = Instantiate(bullet, transform.position, Quaternion.identity);
                 Rigidbody2D bulletInstRB = bulletInst.GetComponent<Rigidbody2D>();
                 bulletInstRB.AddForce(gameObject.transform.up * bulletSpeed);
@@ -122,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
+                gunShotSFX.PlayOneShot(gunShotSFXClip);
                 GameObject bulletInst = Instantiate(bullet, transform.position, Quaternion.identity);
                 Rigidbody2D bulletInstRB = bulletInst.GetComponent<Rigidbody2D>();
                 bulletInstRB.AddForce(-gameObject.transform.up * bulletSpeed);
@@ -139,6 +149,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator ReloadWait()
     {
         isReloading = true;
+        reloadSFX.PlayOneShot(reloadSFXClip);
         yield return new WaitForSeconds(3.5f);
         ammo = originalAmmo;
         yield return new WaitForSeconds(0.5f);
