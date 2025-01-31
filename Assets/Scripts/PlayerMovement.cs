@@ -48,10 +48,13 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource reloadSFX;
     public AudioClip reloadSFXClip;
 
+    public Animator anim; 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         canDash = true;
     }
@@ -83,6 +86,27 @@ public class PlayerMovement : MonoBehaviour
             {
                 StartCoroutine(Invincibility());
             }
+        }
+
+        anim.SetFloat("X", movementDirection.x);
+        anim.SetFloat ("Y", movementDirection.y);
+
+        if (isDashing)
+        {
+            anim.SetBool("isDashing", true);
+        }
+        else
+        {
+            anim.SetBool("isDashing", true) ;
+        }
+
+        if (rb.velocity.magnitude > 0)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
         }
     }
 
