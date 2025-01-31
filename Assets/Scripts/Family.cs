@@ -99,7 +99,7 @@ public class Family : MonoBehaviour
 
         if (selfHappiness >= 90)
         {
-            if (selfSicknessRNG == 1)
+            if (selfSicknessRNG == 10)
             {
                 selfOK.SetActive(false);
                 selfBAD.SetActive(false);
@@ -117,7 +117,7 @@ public class Family : MonoBehaviour
         }
         else if (selfHappiness >= 75)
         {
-            if (selfSicknessRNG <= 5)
+            if (selfSicknessRNG <= 20)
             {
                 selfOK.SetActive(false);
                 selfBAD.SetActive(false);
@@ -135,7 +135,7 @@ public class Family : MonoBehaviour
         }
         else if (selfHappiness >= 50)
         {
-            if (selfSicknessRNG <= 15)
+            if (selfSicknessRNG <= 30)
             {
                 selfOK.SetActive(false);
                 selfBAD.SetActive(false);
@@ -153,7 +153,7 @@ public class Family : MonoBehaviour
         }
         else if (selfHappiness >= 25)
         {
-            if (selfSicknessRNG <= 30)
+            if (selfSicknessRNG <= 40)
             {
                 selfOK.SetActive(false);
                 selfBAD.SetActive(false);
@@ -171,7 +171,7 @@ public class Family : MonoBehaviour
         }
         else if (selfHappiness <= 10)
         {
-            if (selfSicknessRNG <= 45)
+            if (selfSicknessRNG <= 50)
             {
                 selfOK.SetActive(false);
                 selfBAD.SetActive(false);
@@ -190,7 +190,7 @@ public class Family : MonoBehaviour
 
         if (wifeHappiness >= 90)
         {
-            if (wifeSicknessRNG == 1)
+            if (wifeSicknessRNG <= 60)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
@@ -208,7 +208,7 @@ public class Family : MonoBehaviour
         }
         else if (wifeHappiness >= 75)
         {
-            if (wifeSicknessRNG <= 5)
+            if (wifeSicknessRNG <= 70)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
@@ -226,7 +226,7 @@ public class Family : MonoBehaviour
         }
         else if (wifeHappiness >= 50)
         {
-            if (wifeSicknessRNG <= 15)
+            if (wifeSicknessRNG <= 80)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
@@ -244,7 +244,7 @@ public class Family : MonoBehaviour
         }
         else if (wifeHappiness >= 25)
         {
-            if (wifeSicknessRNG <= 30)
+            if (wifeSicknessRNG <= 90)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
@@ -262,7 +262,7 @@ public class Family : MonoBehaviour
         }
         else if (wifeHappiness <= 10)
         {
-            if (wifeSicknessRNG <= 45)
+            if (wifeSicknessRNG <= 100)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
