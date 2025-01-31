@@ -11,6 +11,9 @@ public class EnemyHP : MonoBehaviour
 
     public float maxHealth;
 
+    public AudioSource enemyHitSFX;
+    public AudioClip enemyHitSFXClip;
+
     private void Update()
     {
         if (enemyHP < 0)
@@ -24,6 +27,7 @@ public class EnemyHP : MonoBehaviour
         if (collision.gameObject.tag == "PlayerBullet")
         {
             enemyHP -= 10;
+            enemyHitSFX.PlayOneShot(enemyHitSFXClip);
             bossBar.fillAmount = enemyHP / maxHealth;
         }
     }

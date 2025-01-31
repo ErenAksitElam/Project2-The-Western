@@ -7,6 +7,6 @@ public class BountyCompleted : MonoBehaviour
 {
     public void BountyCompletedContinue()
     {
-        SceneManager.LoadScene("FamilyMenu");
+        SceneManager.LoadScene("FamilyCutscene");
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b9e45fe6d32eeb4795ac173ae6116f6
+guid: e7b86cf5762e34d4b80ac137d6940979
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerdashright_0
+      name: playerbackwarddashsheet_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 72
-        width: 88
-        height: 149
+        x: 93
+        y: 45
+        width: 83
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d119775e0fbca9f4fb7957c92148f97d
-      internalID: 102672080
+      spriteID: 958578ad7bad8164ca22a32a62d96828
+      internalID: -2001679800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerbackwarddashsheet_1
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 45
+        width: 83
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d37e78539e72d5409d6439f75fbabc8
+      internalID: -773981208
       vertices: []
       indices: 
       edges: []
@@ -180,7 +201,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      playerdashright_0: 102672080
+      playerbackwarddashsheet_0: -2001679800
+      playerbackwarddashsheet_1: -773981208
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

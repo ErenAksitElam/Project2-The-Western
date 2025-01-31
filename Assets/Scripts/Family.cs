@@ -34,9 +34,9 @@ public class Family : MonoBehaviour
     public static float remainingMoney = 0;
     static float livingExpenses = 0;
 
-    static float selfHappiness = 100;
-    static float wifeHappiness = 100;
-    static float sonHappiness = 100;
+    static float selfHappiness = 75;
+    static float wifeHappiness = 75;
+    static float sonHappiness = 75;
 
     private float selfSicknessRNG;
     private float wifeSicknessRNG;
@@ -153,7 +153,7 @@ public class Family : MonoBehaviour
         }
         else if (selfHappiness >= 25)
         {
-            if (selfSicknessRNG <= 40)
+            if (selfSicknessRNG <= 75)
             {
                 selfOK.SetActive(false);
                 selfBAD.SetActive(false);
@@ -171,7 +171,7 @@ public class Family : MonoBehaviour
         }
         else if (selfHappiness <= 10)
         {
-            if (selfSicknessRNG <= 50)
+            if (selfSicknessRNG <= 90)
             {
                 selfOK.SetActive(false);
                 selfBAD.SetActive(false);
@@ -190,7 +190,7 @@ public class Family : MonoBehaviour
 
         if (wifeHappiness >= 90)
         {
-            if (wifeSicknessRNG <= 60)
+            if (wifeSicknessRNG <= 10)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
@@ -208,7 +208,7 @@ public class Family : MonoBehaviour
         }
         else if (wifeHappiness >= 75)
         {
-            if (wifeSicknessRNG <= 70)
+            if (wifeSicknessRNG <= 20)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
@@ -226,7 +226,7 @@ public class Family : MonoBehaviour
         }
         else if (wifeHappiness >= 50)
         {
-            if (wifeSicknessRNG <= 80)
+            if (wifeSicknessRNG <= 30)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
@@ -244,7 +244,7 @@ public class Family : MonoBehaviour
         }
         else if (wifeHappiness >= 25)
         {
-            if (wifeSicknessRNG <= 90)
+            if (wifeSicknessRNG <= 75)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
@@ -262,7 +262,7 @@ public class Family : MonoBehaviour
         }
         else if (wifeHappiness <= 10)
         {
-            if (wifeSicknessRNG <= 100)
+            if (wifeSicknessRNG <= 90)
             {
                 wifeOK.SetActive(false);
                 wifeBAD.SetActive(false);
@@ -281,7 +281,7 @@ public class Family : MonoBehaviour
 
         if (sonHappiness >= 90)
         {
-            if (sonSicknessRNG == 1)
+            if (sonSicknessRNG == 10)
             {
                 sonOK.SetActive(false);
                 sonBAD.SetActive(false);
@@ -299,7 +299,7 @@ public class Family : MonoBehaviour
         }
         else if (sonHappiness >= 75)
         {
-            if (sonSicknessRNG <= 5)
+            if (sonSicknessRNG <= 20)
             {
                 sonOK.SetActive(false);
                 sonBAD.SetActive(false);
@@ -317,7 +317,7 @@ public class Family : MonoBehaviour
         }
         else if (sonHappiness >= 50)
         {
-            if (sonSicknessRNG <= 15)
+            if (sonSicknessRNG <= 30)
             {
                 sonOK.SetActive(false);
                 sonBAD.SetActive(false);
@@ -335,7 +335,7 @@ public class Family : MonoBehaviour
         }
         else if (sonHappiness >= 25)
         {
-            if (sonSicknessRNG <= 30)
+            if (sonSicknessRNG <= 75)
             {
                 sonOK.SetActive(false);
                 sonBAD.SetActive(false);
@@ -353,7 +353,7 @@ public class Family : MonoBehaviour
         }
         else if (sonHappiness <= 10)
         {
-            if (sonSicknessRNG <= 45)
+            if (sonSicknessRNG <= 90)
             {
                 sonOK.SetActive(false);
                 sonBAD.SetActive(false);
@@ -460,6 +460,10 @@ public class Family : MonoBehaviour
             {
                 SceneManager.LoadScene("YouDiedTuberculosis");
             }
+            else
+            {
+                SceneManager.LoadScene("YouDiedTuberculosis");
+            }
         }
         else if (wifeIsSick && medicineCheck)
         {
@@ -495,6 +499,10 @@ public class Family : MonoBehaviour
             else if (deathScreenRNG == 6)
             {
                 SceneManager.LoadScene("WifeDiedTuberculosis");
+            }
+            else
+            {
+                SceneManager.LoadScene("YouDiedTuberculosis");
             }
         }
         else if (sonIsSick && medicineCheck)
@@ -532,9 +540,23 @@ public class Family : MonoBehaviour
             {
                 SceneManager.LoadScene("SonDiedTuberculosis");
             }
+            else
+            {
+                SceneManager.LoadScene("YouDiedTuberculosis");
+            }
         }
-
-        SceneManager.LoadScene("BountyCutscene");
+        else if (!selfIsSick)
+        {
+            SceneManager.LoadScene("BountyCutscene");
+        }
+        else if (!wifeIsSick)
+        {
+            SceneManager.LoadScene("BountyCutscene");
+        }
+        else if (!sonIsSick)
+        {
+            SceneManager.LoadScene("BountyCutscene");
+        }
     }
 
     public void OneStarBounty()

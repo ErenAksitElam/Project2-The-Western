@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e14d1d851b7cdfe4abacf9202b8901b8
+guid: f4e14e35bc625544ea258fe186677e62
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerdashleft_0
+      name: playerdashleftsheet_0
       rect:
         serializedVersion: 2
         x: 99
@@ -163,8 +163,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efa28778871ccde4ca12f4f4614b8d61
-      internalID: 1797042612
+      spriteID: 87027ee6f90f4664a86e2587d189a55f
+      internalID: 1561447680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerdashleftsheet_1
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 70
+        width: 87
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52b72d67ecea8b459ff6058954968cd
+      internalID: 903773697
       vertices: []
       indices: 
       edges: []
@@ -180,7 +201,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      playerdashleft_0: 1797042612
+      playerdashleftsheet_0: 1561447680
+      playerdashleftsheet_1: 903773697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

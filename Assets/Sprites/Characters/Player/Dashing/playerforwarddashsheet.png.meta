@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0230965356108964e90d78a483876ee9
+guid: 9b953ea93e2100645afa3d93562e6007
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,32 +149,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Playerfrontrunanim_0
+      name: playerforwarddashsheet_0
       rect:
         serializedVersion: 2
-        x: 64
-        y: 62
-        width: 75
-        height: 131
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7a9b711b25adcd4da975323bf874629
-      internalID: 784459443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Playerfrontrunanim_1
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 62
+        x: 90
+        y: 65
         width: 76
         height: 134
       alignment: 0
@@ -184,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d53c50f863d5ddb469b87c633231cc41
-      internalID: 157337458
+      spriteID: a86b2bfd8f0ffc747b23c31836d96570
+      internalID: -1232538206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Playerfrontrunanim_2
+      name: playerforwarddashsheet_1
       rect:
         serializedVersion: 2
-        x: 575
-        y: 64
-        width: 77
-        height: 135
+        x: 346
+        y: 65
+        width: 76
+        height: 134
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,50 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e0ca6d897e9bcb45972790b21f554a1
-      internalID: 1573834063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Playerfrontrunanim_3
-      rect:
-        serializedVersion: 2
-        x: 841
-        y: 63
-        width: 75
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6831c2879f4d3fc4ab5dc76c7b4e69ab
-      internalID: 312619786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Playerfrontrunanim_4
-      rect:
-        serializedVersion: 2
-        x: 1094
-        y: 64
-        width: 73
-        height: 133
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b70319b070c94d94d94acd3a3c1a04c6
-      internalID: 237369666
+      spriteID: b82d97a055b8e554eb7968f7be1b7ec9
+      internalID: 1784954967
       vertices: []
       indices: 
       edges: []
@@ -264,11 +201,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Playerfrontrunanim_0: 784459443
-      Playerfrontrunanim_1: 157337458
-      Playerfrontrunanim_2: 1573834063
-      Playerfrontrunanim_3: 312619786
-      Playerfrontrunanim_4: 237369666
+      playerforwarddashsheet_0: -1232538206
+      playerforwarddashsheet_1: 1784954967
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

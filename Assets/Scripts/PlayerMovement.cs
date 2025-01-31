@@ -48,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource reloadSFX;
     public AudioClip reloadSFXClip;
 
+    public AudioSource hurtSFX;
+    public AudioClip hurtSFXClip;
+
     public Animator anim; 
 
     // Start is called before the first frame update
@@ -95,9 +98,9 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isDashing", true);
         }
-        else
+        else if (!isDashing)
         {
-            anim.SetBool("isDashing", true) ;
+            anim.SetBool("isDashing", false) ;
         }
 
         if (rb.velocity.magnitude > 0)
@@ -192,6 +195,8 @@ public class PlayerMovement : MonoBehaviour
                 DisableHealthBars();
                 HealthBars[currentIndex].SetActive(true);
                 StartCoroutine(Invincibility());
+
+                hurtSFX.PlayOneShot(hurtSFXClip);
             }
         }
     }

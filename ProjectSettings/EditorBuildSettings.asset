@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Death Scenes/DeathScreen.unity
     guid: a4642e20bd3186342a055fb39183ac19
   - enabled: 1
-    path: Assets/Scenes/Bounty Stuff/BountyCutscene.unity
+    path: Assets/Scenes/Cutscenes/BountyCutscene.unity
     guid: 9d4fe682b55ca724484053b55f69b0e2
   - enabled: 1
     path: Assets/Scenes/Bounty Stuff/BountyMenu.unity
@@ -107,4 +107,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorials/TutorialVeryHard1.unity
     guid: 6d8379c09228a3f4a9e000d326aa79be
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/FamilyCutscene.unity
+    guid: 64a5c342dbb6e1143a738e9653cc4462
   m_configObjects: {}
