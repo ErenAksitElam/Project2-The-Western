@@ -73,11 +73,11 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (rb.velocity.x >= 0.01f)
+        if (rb.linearVelocity.x >= 0.01f)
         {
             enemyGFX.localScale = new Vector3(-0.25f, 0.25f, 0.25f);
         }
-        else if (rb.velocity.x <= -0.01f)
+        else if (rb.linearVelocity.x <= -0.01f)
         {
             enemyGFX.localScale = new Vector3(0.25f, 0.25f, 0.25f);
         }

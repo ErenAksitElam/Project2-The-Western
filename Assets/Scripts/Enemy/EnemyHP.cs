@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EnemyHP : MonoBehaviour
 {
-    public float enemyHP = 10;
+    public float enemyHP = 100;
+    public Image bossBar;
+
+    public float maxHealth;
+
+    public AudioSource enemyHitSFX;
+    public AudioClip enemyHitSFXClip;
 
     private void Update()
     {
         if (enemyHP < 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("BountyCompleted");
         }
     }
 
@@ -18,7 +26,9 @@ public class EnemyHP : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            enemyHP -= 1;
+            enemyHP -= 10;
+            enemyHitSFX.PlayOneShot(enemyHitSFXClip);
+            bossBar.fillAmount = enemyHP / maxHealth;
         }
     }
 }

@@ -35,7 +35,7 @@ public class EnemyKnockback : MonoBehaviour
         if (collision.gameObject.tag == "PlayerBullet")
         {
             isKnockedBack = true;
-            knockbackVelocity = collision.attachedRigidbody.velocity;
+            knockbackVelocity = collision.attachedRigidbody.linearVelocity;
             
             rb.AddForce(knockbackVelocity * 20);
             StartCoroutine(ResetKnockback());
