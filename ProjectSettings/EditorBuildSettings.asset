@@ -111,3 +111,4 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/FamilyCutscene.unity
     guid: 64a5c342dbb6e1143a738e9653cc4462
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

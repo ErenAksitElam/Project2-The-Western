@@ -103,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isDashing", false) ;
         }
 
-        if (rb.velocity.magnitude > 0)
+        if (rb.linearVelocity.magnitude > 0)
         {
             anim.SetBool("isMoving", true);
         }
@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
-            rb.velocity = movementDirection * movementSpeed;
+            rb.linearVelocity = movementDirection * movementSpeed;
         }
     }
 
@@ -205,7 +205,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-        rb.velocity = new Vector2(movementDirection.x * dashSpeed, movementDirection.y * dashSpeed);
+        rb.linearVelocity = new Vector2(movementDirection.x * dashSpeed, movementDirection.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
 

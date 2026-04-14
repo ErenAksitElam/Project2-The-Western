@@ -53,7 +53,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void CheckDirection()
     {
-        if (GetComponent<Rigidbody>().velocity.x > 0.3 || GetComponent<Rigidbody>().velocity.y > 0.3 || GetComponent<Rigidbody>().velocity.z > 0.3)
-            transform.LookAt(transform.position + GetComponent<Rigidbody>().velocity);
+        if (GetComponent<Rigidbody>().linearVelocity.x > 0.3 || GetComponent<Rigidbody>().linearVelocity.y > 0.3 || GetComponent<Rigidbody>().linearVelocity.z > 0.3)
+            transform.LookAt(transform.position + GetComponent<Rigidbody>().linearVelocity);
     }
 }
